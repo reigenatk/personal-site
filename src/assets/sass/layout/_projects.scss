@@ -1,0 +1,258 @@
+.hero-img {
+  height: 100%;
+  border-radius: $borderRadius;
+}
+
+.hero {
+  height: 15vh;
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.hero-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: $borderRadius;
+}
+
+.hero-text {
+  color: $white;
+  text-align: center;
+}
+
+.project-quote {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+
+  & p {
+    background-color: #AB5F4F;
+    border-radius: 15px;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 1.5rem;
+    padding: 1rem 3rem;
+    color: white;
+    text-align: center;
+  }
+}
+
+.project-description {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.7s;
+
+  & h4 {
+    color: white;
+
+    font-family: 'Trebuchet MS', serif;
+    padding: 1rem 3rem;
+    text-align: center;
+  }
+
+  margin-bottom: 2rem;
+
+  &:hover {
+    background: #6CC5D1;
+    transform: scale(1.05);
+  }
+}
+
+/*#########*/
+/* Recipes */
+/*#########*/
+.recipes-container {
+  display: grid;
+  gap: 2rem 2rem;
+}
+
+.recipes-list {
+  display: grid;
+  gap: 2rem 3rem;
+  padding-bottom: 3rem;
+}
+
+.tag-container {
+  // order: 1; // this makes the tag container go after the recipes on a mobile screen (since order is default 0 and it sorts by increasing)
+  display: flex;
+  flex-direction: column;
+  transition: all 0.5s ease-in-out;
+  & h4 {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: green;
+    text-align: center;
+    font-size: 2rem;
+  }
+
+  &:hover {
+    background-color: #27474E;
+
+  }
+
+}
+
+.tags-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; // 3 column layout on mobile
+  
+}
+
+
+.tags-list a {
+  text-transform: capitalize;
+  text-decoration: none;
+  display: block;
+  color: #94C5CC;
+  transition: all 0.2s ease-in-out;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  border-radius: 25px;
+
+  &:hover {
+    color: white;
+    background: #447604;
+  }
+}
+
+
+
+.recipe {
+  display: block;
+  text-decoration: none;
+  box-shadow: 2.5rem 1.5rem 4rem rgba(white, 0.01);
+  transition: all 0.5s;
+  outline-offset: 0.5rem; // little space between the outline + image when hovered
+
+  &:hover {
+    transform: scale(1.05); // zoom in a little
+    box-shadow: 1.5rem 1.5rem 40rem rgba(white, 0.1); // increase shadow
+    outline: 0.2rem solid #E8706C; // hover color
+  }
+}
+
+.recipe-img {
+  height: 15rem;
+  border-radius: $borderRadius;
+  margin: 0.5rem 0.5rem;
+}
+
+.recipe h5 {
+  margin: 1rem 0.5rem;
+  line-height: 1;
+  color: #ADD8E6;
+  font-weight: 600;
+  font-size: 2rem;
+}
+
+.recipe p {
+  margin: 1rem 0.5rem;
+  line-height: 1;
+  color: #F7F700;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+
+  & p {
+    color: #94C5CC;
+    margin: 0.5rem 0.75rem;
+    padding: 0.5rem 0.5rem;
+    border-radius: 25px;
+    transition: all 0.2s ease-in-out; 
+    &:hover {
+      background-color: #FB4B4E;
+    }
+  }
+
+
+}
+
+
+@media screen and (min-width: 576px) {
+  .recipes-list {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .recipe-img {
+    height: 10rem;
+  }
+
+  .project-description {
+    & h4 {
+      font-size: 1rem;
+    }
+
+    line-height: 2rem;
+  }
+
+}
+
+@media only screen and (min-width: 768px) {
+  .hero-text h1 {
+    font-size: 3rem;
+    margin: 0;
+  }
+
+  .hero {
+    height: 20vh;
+    position: relative;
+    margin-bottom: 2rem;
+  }
+
+  .project-description {
+    & h4 {
+      font-size: 1.5rem;
+    }
+
+    line-height: 2rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .recipes-container {
+    grid-template-columns: 200px 1fr;
+    gap: 2rem;
+  }
+
+  .recipes-list {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .recipe-img {
+    height: 9rem;
+  }
+
+  .recipe p {
+    font-size: 0.85rem;
+  }
+
+  .tags-container {
+    order: 0;
+    /* background: blue; */
+  }
+
+  .tags-list {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .recipe h5 {
+    font-size: 1.15rem;
+  }
+
+  .recipes-list {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

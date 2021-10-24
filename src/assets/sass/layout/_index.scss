@@ -1,0 +1,38 @@
+.home-page {
+    display: grid;
+    gap: 2rem 4rem; // the gap between the elemnts, rowgap colgap
+    padding-bottom: 3rem;
+    & h2 {
+        text-transform: none;
+        font-weight: bold;
+        color: white;
+        font-size: 2.441rem;
+    }
+
+    & p {
+        color: white;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        font-size: 1.5rem;
+    }
+
+    & .btn {
+        margin-bottom: 2rem;
+    }
+
+  }
+.home-img {
+    border-radius: $borderRadius;
+    height: 500px;
+}
+  
+  @media screen and (min-width: 992px) {
+    .home-page {
+      grid-template-columns: 1fr 1fr; // fr stands for free space, basically divides the space while taking into account row/column gaps
+      align-items: center;
+      height: 400px;
+    }
+    .home-img {
+      height: 100%;
+    }
+  }

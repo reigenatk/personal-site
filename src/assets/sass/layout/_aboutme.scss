@@ -1,0 +1,48 @@
+.row {
+  display: flex;
+  justify-content: space-around;
+}
+
+// .flex-item div:first-child {
+//     height: 0%;
+// }
+
+.flex-item {
+  width: 50%;
+  margin-left: 3rem;
+  margin-right: 3rem;
+  align-items: flex-start;
+}
+
+#about {
+  background-color: #0c0032;
+}
+
+.heading-hover {
+  margin-top: 6rem;
+  margin-bottom: 2rem;
+  transition: all 1s; /* control the btn hover transform here */
+  &:hover {
+    background-color: #4887b0;
+    text-shadow: 1px 1px 1px rgba($color-black, 0.2);
+  }
+}
+
+.animation-block {
+  width: 100%;
+  flex-grow: 1;
+  padding: 5rem 5rem;
+  transition: all 1s; /* control the btn hover transform here */
+  &:hover {
+    background-color: #daad86;
+    text-shadow: 1px 5px 1px rgba($color-black, 0.1);
+  }
+}
+
+.extra-links {
+  display: flex;
+}
+
+.extra-links-item {
+  margin: 3rem auto;
+}

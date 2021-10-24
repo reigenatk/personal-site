@@ -1,0 +1,35 @@
+.header {
+  height: 95vh; /* 95% of the viewport aka the screen height */
+  /* gradient + bg image*/
+  // background-image: url(../../../static/bilgewater.jpg);
+  background-size: cover; /* img is always fuill size of screen */
+  background-position: top; /* top of the image (the content in the image) always stays at the top while bottom might get cropped */
+
+  /* polygon design! Use percentages for widths and its very intuitive*/
+  /* clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); */
+
+  position: relative;
+
+  &__logo-box {
+    position: absolute;
+    /* relative to first relative parent element, which we make header */
+    top: 4rem;
+    left: 4rem;
+  }
+
+  &__text-box {
+    position: absolute; /* relative to the header */
+    top: 50%;
+    left: 50%;
+    /* need to transform since otherwise top left corner is at middle */
+    transform: translate(
+      -50%,
+      -50%
+    ); /* 50% of its width left, 50% height to top. This is in relation to the elemnt itself*/
+    text-align: center;
+  }
+
+  &__logo {
+    height: 3.5rem;
+  }
+}

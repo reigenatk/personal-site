@@ -1,0 +1,81 @@
+$color-grey-dark: #777;
+$color-white: #fff;
+$color-black: black;
+
+$color-grey-light-1: #f7f7f7;
+$primary-500: #645cff;
+$grey-500: #cdb3e1;
+$grey-1000: #333538;
+
+$transition: 0.3s ease-in-out all;
+$max-width: 1120px;
+
+$color-primary-light: #20bf55;
+$color-primary-dark: #01baef;
+$color-primary: #9bd318;
+
+// GRID
+$grid-width: 114rem;
+$gutter-vertical: 8rem;
+$gutter-horizontal: 6rem;
+
+// FONT
+$default-font-size: 1.6rem; // NOT the root font size, just a font that we are using a lot so we put it in a variable
+
+$letterSpacing: 1px;
+
+$primary-0: #f0efff;
+$primary-50: #d8d6ff;
+$primary-100: #c1beff;
+$primary-200: #aaa5ff;
+$primary-300: #938dff;
+$primary-400: #7b74ff;
+$primary-500: #645cff;
+$primary-600: #554ed9;
+$primary-700: #4640b3;
+$primary-800: #37338c;
+$primary-900: #282566;
+$primary-1000: #191740;
+$primary-1100: #0a0919;
+$grey-0: #fafbfc;
+$grey-50: #f2f4f8;
+$grey-100: #eaedf3;
+$grey-200: #e2e7ef;
+$grey-300: #dbe0ea;
+$grey-400: #d3dae6;
+$grey-500: #cbd3e1;
+$grey-600: #adb3bf;
+$grey-700: #8e949e;
+$grey-800: #70747c;
+$grey-900: #51545a;
+$grey-1000: #333538;
+$grey-1100: #141516;
+$black: #222;
+$white: #fff;
+$red-light: #f8d7da;
+$red-dark: #842029;
+$green-light: #d1e7dd;
+$green-dark: #0f5132;
+
+$shadow-1: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+$shadow-2: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+$shadow-3: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+$shadow-4: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+$defaultFontSize: 87.5%; 
+$headingFont: "Inconsolata", monospace;
+$bodyFont: "Montserrat", sans-serif;
+$smallText: 0.8em;
+$extraSmallText: 0.7em;
+$backgroundColor: $grey-0;
+$textColor: $grey-1000;
+$borderRadius: 0.25rem;
+$letterSpacing: 1px;
+$transition: 0.3s ease-in-out all;
+$max-width: 1120px;
+$fixed-width: 600px;
+
+$active-link-color: #c2fae2;
+
+$nav_height: 6rem;
+$footer_height: 4rem;

@@ -1,0 +1,112 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+
+  /* inherit this property for all elements on page */
+  box-sizing: inherit;
+}
+
+html {
+  font-size: $defaultFontSize;
+  /* 0.625 of default (usually 16) = 10px root font size */
+  scroll-behavior: smooth;
+
+}
+
+body {
+  /* basically, normally padding and border sizes in the calculations for width or height. But we dont want that. This disables that */
+  /* without this, a 100px wide box will NOT be 100px wide if it has borders or padding, since those are added ONTO the 100px as opposed to part of the 100px */
+  box-sizing: border-box;
+
+  // pad the entire webpage
+  padding-top: 30px;
+  // padding-left: 30px;
+  // padding-right: 30px;
+
+  background-color: black;
+
+  // custom cursor
+  // cursor: none;
+
+  overflow-x: hidden;
+}
+
+.cursor {
+  position: absolute;
+  left: 0;
+  top: 0;
+  // border: 1.5px solid white;
+  width: 20px;
+  height: 20px;
+  border-radius: 50px;
+  transform: translate(-50%, -50%);
+
+  pointer-events: none;
+
+  // actual cursor here
+  &::after,
+  &::before {
+    content: "";
+    width: 30px;
+    height: 30px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #e84a27;
+    position: absolute;
+    border-radius: 50px;
+  }
+
+  &::before {
+    background-color: white;
+    // transform: translate(-50%, -50%), scale(3);
+  }
+
+  &.click::before {
+    animation: click 0.5s ease-in-out forwards;
+  }
+
+  @keyframes click {
+    0% {
+      opacity: 1;
+      transform: translate(-50%, -50%), scale(1);
+    }
+
+    100% {
+      opacity: 0;
+      transform: translate(-50%, -50%), scale(40);
+    }
+  }
+}
+
+a {
+  color: white;
+}
+
+.page {
+  width: 90vw; // same as navbar
+  max-width: $max-width;
+  margin: 0 auto; // center
+  padding-top: 2rem;
+
+  min-height: calc(100vh - (6rem + 4rem)); // take up 100% of height at least
+}
+
+
+@media only screen and (min-width: 576px) {
+  $defaultFontSize: 100%;
+
+  html {
+    font-size: $defaultFontSize;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  $defaultFontSize: 112.5%;
+
+  html {
+    font-size: $defaultFontSize;
+  }
+}

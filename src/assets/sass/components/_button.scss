@@ -1,0 +1,115 @@
+/* link = not yet visited pseudoclass */
+.btn-start:link,
+.btn-start:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1.5rem 4rem;
+  display: inline-block; /* need this */
+  border-radius: 10rem; /* round btn */
+  transition: all 0.5s; /* control the btn hover transform here */
+  position: relative;
+  font-size: 3rem;
+}
+
+.btn-start:hover {
+  transform: translateY(-5px); /* moves up */
+  box-shadow: 0 10px 20px rgba($color-black, 0.2); /* x y blur color*/
+}
+
+.btn-start:active {
+  transform: translateY(-1px); /* in relation to original position*/
+  box-shadow: 0 5px 10px rgba($color-black, 0.2); /* x y blur size, color*/
+}
+
+.btn-white {
+  background-color: $color-white;
+  color: $color-grey-dark;
+}
+
+/* this pseudo element 'after' puts something specific after another thing */
+/* in this example we make something of the same height and put it under the original button  */
+/* then on hover we transition it separate from the button transition*/
+.btn-start::after {
+  content: "";
+  display: inline-block;
+  height: 100%; /* relative to parent */
+  width: 100%;
+  border-radius: 10rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s; /* this refers to the btn hover property */
+}
+
+.btn-white::after {
+  background-color: $color-white;
+}
+
+/* this affects the hover on the after element of btn, which is behind the original btn*/
+.btn-start:hover::after {
+  /* make animation once hover */
+  transform: scale(1.5);
+  opacity: 0;
+}
+
+.btn-animated {
+  animation: moveInBottom 0.5s ease-out 0.75s; /* .75s delay */
+  animation-fill-mode: backwards; /* automatically apply 0% animation styles before animation starts */
+}
+
+// this is the animation for the github + resume link buttons
+.btn-text {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  transition: background-color 1s; // this again adds the animation to the button, without it it will instantly change to hover state from base state
+  border-radius: 50px;
+  &:link,
+  &:visited {
+    display: inline-block;
+    text-decoration: none; // no underline
+    border-bottom: 1px solid $color-primary;
+    font-size: 40px;
+    padding: 3px;
+  }
+
+  &:hover {
+    background-color: $color-primary;
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+    transform: translateY(-10px);
+  }
+
+  &:active {
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+    transform: translateY(0px);
+  }
+}
+
+#resume_pic {
+  vertical-align: middle;
+}
+
+// GENERAL BUTTON STYLES
+
+.btn {
+    cursor: pointer;
+    appearance: none;
+    color: $white;
+    background: $primary-500;
+    border: none;
+    border-radius: $borderRadius;
+    letter-spacing: $letterSpacing;
+
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+
+    box-shadow: $shadow-1;
+    transition: $transition;
+    text-transform: capitalize;
+
+    &:hover {
+      color: $white;
+      background: $primary-700;
+      box-shadow: $shadow-2;
+      }
+}

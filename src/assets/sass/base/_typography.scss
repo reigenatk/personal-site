@@ -1,0 +1,116 @@
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  // font-size: 5rem;
+  line-height: 1.75;
+  color: $color-grey-dark;
+  // padding: 0px; /* pads so the image isnt entire webpage size */
+}
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+
+  backface-visibility: hidden; /* fix the animation bug */
+  width: 100vh;
+  &--main {
+    display: block;
+    font-size: 10rem; /* REM is relative to root font size */
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+
+    animation-name: moveInLeft;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in;
+  }
+
+  &--sub {
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 15px;
+
+    animation-name: moveInRight;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in;
+  }
+}
+
+.heading-secondary {
+  font-size: 7.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  background-image: linear-gradient(to right, #f8c4c1, #e8a87c);
+  display: inline-block; // need the gradient to not take 100% width!
+  -webkit-background-clip: text; // background gets clipped to text (background is just our gradient!)
+  color: transparent; // need to do this so we can see the gradient, since text sits on top of bg
+
+  letter-spacing: 0.2px;
+  transition: all 0.75s;
+
+  &:hover {
+    background-image: linear-gradient(to right, #ea3ef3, #d14bb4);
+    transform: scaleY(1.5) scaleX(1.75);
+    text-shadow: 10px 5px 10px rgba($color-black, 0.2);
+  }
+}
+
+.heading-tertiary {
+  background-image: linear-gradient(to right, #2193b0, #2193b0);
+  display: inline-block; // need the gradient to not take 100% width!
+  -webkit-background-clip: text; // background gets clipped to text (background is just our gradient!)
+  color: transparent; // need to do this so we can see the gradient, since text sits on top of bg
+  font-size: 5.5rem;
+  font-weight: 700;
+  font-family: "Alegreya Sans", sans-serif;
+}
+
+.paragraph {
+  font-size: 3rem;
+  font-family: "Andada Pro", serif;
+  letter-spacing: 0.05rem;
+  line-height: 4rem;
+  color: white;
+  &:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+}
+
+.font-uiuc {
+  margin: 1rem;
+  color: #e84a27;
+}
+
+#UIUCpic {
+  width: 5.5rem;
+}
+
+#man {
+  color: transparent;
+}
+
+.fa {
+  color: black;
+  text-decoration: none;
+  font-size: 50px;
+
+  &.fa-soundcloud {
+    color: #ff7700;
+  }
+}
+
+.quick-links {
+  display: inline-block;
+}
+
+.quick-links-pic {
+  width: 50px;
+}
+
+.resume-text {
+  color: #ffc0cb;
+}
+
+.fa-github {
+  color: white;
+}

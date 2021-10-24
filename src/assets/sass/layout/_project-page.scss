@@ -1,0 +1,155 @@
+/*#########*/
+/* Recipe Template */
+/*#########*/
+
+.recipe-hero {
+    display: grid;
+    gap: 3rem;
+  }
+  .recipe-hero .about-img {
+    height: 400px;
+  }
+
+  .recipe-info {
+      & h2 {
+          color: white;
+          margin-bottom: 2rem;
+          font-size: 2rem;
+      }
+
+      & p {
+          color: white;
+      }
+  }
+
+  .about-img {
+    box-shadow: 2.5rem 1.5rem 4rem rgba(white, 0.01);
+    transition: all 0.5s;
+    outline-offset: 0.5rem; // little space between the outline + image when hovered
+  
+    &:hover {
+      transform: scale(1.05); // zoom in a little
+      box-shadow: 1.5rem 1.5rem 40rem rgba($white, 0.1); // increase shadow
+      outline: 0.2rem solid #E8706C; // hover color
+  }
+}
+
+  .recipe-icons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin: 2rem 0;
+    text-align: center;
+
+    & h5 {
+        margin-bottom: 0;
+        font-size: 0.85em;
+        font-weight: 600;
+        color: white;
+        text-decoration: none;
+    }
+
+    & p {
+        margin-bottom: 0;
+        font-size: 0.85em;
+    }
+  }
+  .recipe-icons svg {
+    font-size: 1.5rem;
+    color: white;
+  }
+
+  .recipe-tags {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap; // wrap if too many for one line
+    font-size: 1.2em;
+    font-weight: 600;
+    
+
+    & a {
+        background: #85447A;
+        border-radius: $borderRadius;
+        color: white;
+        padding: 0.55rem 1rem;
+        margin: 0.25rem 0.75rem;
+        text-transform: capitalize;
+        font-size: 1rem;
+        text-decoration: none;
+        transition: all 0.3s; /* control the btn hover transform here */
+
+        &:hover {
+            background-color: #4887b0;
+            text-shadow: 1px 1px 1px rgba($color-black, 0.2);
+        }
+    }
+  }
+
+  @media screen and (min-width: 992px) {
+    .recipe-hero {
+      grid-template-columns: 4fr 5fr;
+      align-items: center;
+    }
+  }
+
+  .recipe-content {
+    padding: 3rem 0;
+    display: grid;
+    row-gap: 3rem;
+
+    & h4 {
+        font-size: 2rem;
+        color: #7F7EFF;
+        margin-bottom: 2rem;
+    }
+  }
+//   @media screen and (min-width: 992px) {
+//     .recipe-content {
+//       grid-template-columns: 2fr 1fr;
+//     }
+//   }
+  .single-instruction {
+    margin-bottom: 1rem;
+    & p {
+        color: white;
+        font-size: 1.5rem;
+        margin-top: 0.5rem;
+    }
+
+    & header {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 1.5rem;
+        align-items: center;
+        & p {
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size: 1.5rem;
+            color: white;
+            margin-bottom: 0;
+        }
+    }
+    
+  }
+  
+  .single-instruction header div {
+    height: 1px;
+    background: magenta;
+  }
+  
+//   .second-column {
+//     display: grid;
+//     row-gap: 2rem;
+//   }
+  
+//   .single-ingredient {
+//     border-bottom: 1px solid var(--grey-500);
+//     padding-bottom: 0.75rem;
+//   }
+//   .single-tool {
+//     border-bottom: 1px solid var(--grey-500);
+//     padding-bottom: 0.75rem;
+//     color: var(--primary-500);
+//     text-transform: capitalize;
+//   }
+  

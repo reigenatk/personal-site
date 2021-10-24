@@ -1,0 +1,43 @@
+.composition {
+  position: relative; // use this to influence the absolute positioning below
+
+  &__photo {
+    width: 50%;
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 2.5rem 1.5rem 4rem rgba($color-black, 0.4);
+    position: absolute;
+    z-index: 10;
+    transition: all 0.2s;
+    outline-offset: 2rem; // little space between the outline + image when hovered
+
+    &--p1 {
+      left: 0;
+      top: -2rem;
+    }
+
+    &--p2 {
+      right: 0;
+      top: 20rem;
+    }
+
+    &--p3 {
+      left: 0;
+      top: -2rem;
+    }
+
+    &:hover {
+      transform: scale(1.05); // zoom in a little
+      box-shadow: 2.5rem 2.5rem 40rem rgba($color-black, 0.5); // increase shadow
+      z-index: 20; // put on top the hovered image
+      outline: 1.5rem solid $color-primary; // hover color
+    }
+  }
+
+  // composition:hover composition__photo:not(:hover)
+  &:hover &__photo:not(:hover) {
+    transform: scale(0.95); // shrink images that are not hovered!
+  }
+}
