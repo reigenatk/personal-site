@@ -1,11 +1,15 @@
-import React from 'react'
-import Layout from '../components/Layout'
+import React from "react"
+import Layout from "../components/Layout"
 // import Hero from '../components/Hero'
-import styled from 'styled-components'
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import styled from "styled-components"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 // import Banner from '../components/Banner'
-import { graphql } from 'gatsby'
-import { MDXRenderer } from 'gatsby-plugin-mdx'
+import { graphql } from "gatsby"
+import { MDXRenderer } from "gatsby-plugin-mdx"
+
+import Gitalk from "gatsby-plugin-gitalk"
+import "@suziwen/gitalk/dist/gitalk.css"
+
 const PostTemplate = ({ data }) => {
   const {
     mdx: {
@@ -20,25 +24,24 @@ const PostTemplate = ({ data }) => {
       <Wrapper>
         {/* post info */}
         <article className="content">
-        <div className="intro-content">
-          <GatsbyImage
-            image={getImage(image)}
-            alt={title}
-            className="main-img"
-          />
-          <div className="post-info">
-            <span className="post-category">{category}</span>
-            <h2 className="post-title">{title}</h2>
-            <p className="post-date">{date}</p>
-            <div className="underline"></div>
+          <div className="intro-content">
+            <GatsbyImage
+              image={getImage(image)}
+              alt={title}
+              className="main-img"
+            />
+            <div className="post-info">
+              <span className="post-category">{category}</span>
+              <h2 className="post-title">{title}</h2>
+              <p className="post-date">{date}</p>
+              <div className="underline"></div>
+            </div>
           </div>
-        </div>
           <MDXRenderer embeddedImages={embeddedImages}>{body}</MDXRenderer>
         </article>
         {/* banner component */}
-        <article>
-          {/* <Banner /> */}
-        </article>
+        <article>{/* <Banner /> */}</article>
+        <Gitalk />
       </Wrapper>
     </Layout>
   )
@@ -76,16 +79,15 @@ const Wrapper = styled.section`
   margin-bottom: 4rem;
 
   .intro-content {
-      text-align: center;
-      background-color: #333538;
-      padding: 2rem 1.5rem;
+    text-align: center;
+    background-color: #333538;
+    padding: 2rem 1.5rem;
   }
 
   .post-info {
     margin: 2rem 0 3rem 0;
     text-align: center;
     span {
-
       padding: 0.25rem 0.5rem;
       text-transform: uppercase;
       letter-spacing: 0.1rem;
@@ -110,14 +112,14 @@ const Wrapper = styled.section`
   }
 
   .post-date {
-      font-size: 1rem;
-      color: #F0FFF0;
+    font-size: 1rem;
+    color: #f0fff0;
   }
 
   .post-category {
     display: inline-block;
     margin-bottom: 1rem;
-    background: hsl(206, 33%, 96%);;
+    background: hsl(206, 33%, 96%);
     padding: 0.25rem 0.5rem;
     text-transform: uppercase;
     font-weight: 700;
