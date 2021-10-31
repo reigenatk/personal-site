@@ -200,7 +200,8 @@ body {
   display: inline-block; }
 
 .quick-links-pic {
-  width: 50px; }
+  width: 50px;
+  height: 42.47px; }
 
 .fa-github {
   color: white; }
@@ -926,7 +927,7 @@ body {
     text-shadow: 1px 5px 1px rgba(0, 0, 0, 0.1); }
 
 .project-tag p {
-  background-color: #A2AEBB;
+  background-color: #FF9505;
   padding: 0.5rem 0.5rem;
   border-radius: 25px; }
 
