@@ -74,7 +74,7 @@
   font-size: 1.2em;
   font-weight: 600;
 
-  & a {
+  & button {
     background: #85447a;
     border-radius: $borderRadius;
     color: white;
@@ -101,7 +101,10 @@
 }
 
 .recipe-content {
-  padding: 3rem 0;
+  margin-top: 3rem;
+
+  padding: 1rem 1.5rem;
+  background: $grey-800;
   display: grid;
   row-gap: 3rem;
 
@@ -124,7 +127,7 @@
   & p {
     color: white;
     font-size: 1.5rem;
-    
+    margin-left: 0.5rem;
   }
 
   & header {

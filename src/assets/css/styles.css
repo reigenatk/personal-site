@@ -16,7 +16,7 @@ body {
   /* without this, a 100px wide box will NOT be 100px wide if it has borders or padding, since those are added ONTO the 100px as opposed to part of the 100px */
   box-sizing: border-box;
   padding-top: 30px;
-  background-color: #504f54;
+  background-color: #2A4849;
   overflow-x: hidden; }
 
 .cursor {
@@ -1185,7 +1185,7 @@ Jobs
   flex-wrap: wrap;
   font-size: 1.2em;
   font-weight: 600; }
-  .recipe-tags a {
+  .recipe-tags button {
     background: #85447a;
     border-radius: 0.25rem;
     color: white;
@@ -1196,7 +1196,7 @@ Jobs
     text-decoration: none;
     transition: all 0.3s;
     /* control the btn hover transform here */ }
-    .recipe-tags a:hover {
+    .recipe-tags button:hover {
       background-color: #4887b0;
       text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2); }
 
@@ -1206,7 +1206,9 @@ Jobs
     align-items: center; } }
 
 .recipe-content {
-  padding: 3rem 0;
+  margin-top: 3rem;
+  padding: 1rem 1.5rem;
+  background: #70747c;
   display: grid;
   row-gap: 3rem; }
   .recipe-content h4 {
@@ -1222,7 +1224,8 @@ Jobs
   transition: all 0.5s ease-in; }
   .single-instruction p {
     color: white;
-    font-size: 1.5rem; }
+    font-size: 1.5rem;
+    margin-left: 0.5rem; }
   .single-instruction header {
     display: grid;
     grid-template-columns: auto 1fr;
