@@ -1211,26 +1211,25 @@ Jobs
   row-gap: 3rem; }
   .recipe-content h4 {
     font-size: 2rem;
-    color: #7f7eff;
+    color: white;
     margin-bottom: 2rem; }
 
 .single-instruction {
-  margin-bottom: 1rem; }
+  margin: 1rem auto;
+  background: black;
+  padding: 0.5rem 0.5rem;
+  border-radius: 3%;
+  transition: all 0.5s ease-in; }
   .single-instruction p {
     color: white;
-    font-size: 1.5rem;
-    margin-top: 0.5rem; }
+    font-size: 1.5rem; }
   .single-instruction header {
     display: grid;
     grid-template-columns: auto 1fr;
     gap: 1.5rem;
     align-items: center; }
-    .single-instruction header p {
-      text-transform: uppercase;
-      font-weight: 600;
-      font-size: 1.5rem;
-      color: white;
-      margin-bottom: 0; }
+  .single-instruction:hover {
+    transform: scale(1.05); }
 
 .single-instruction header div {
   height: 1px;

@@ -72,9 +72,9 @@ const ProjectTemplate = ({ data }) => {
                   const slug = slugify(tag, { lower: true })
 
                   return (
-                    <Link to={`/tags/${slug}`} key={index}>
+                    <button key={index}>
                       {tag}
-                    </Link>
+                    </button>
                   )
                 })}
               </p>
