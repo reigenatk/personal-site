@@ -1,9 +1,9 @@
 .posts {
-    width: 90vw;
-    max-width: 1300px;
-    margin: 0 auto;
-    margin-bottom: 4rem;
-  }
+  width: 90vw;
+  max-width: 1300px;
+  margin: 0 auto;
+  margin-bottom: 4rem;
+}
 
 .posts-title {
   font-weight: 700;
@@ -17,6 +17,10 @@
 //   background: #0e2f44 !important;
 //   color: #fff68f !important;
 // }
+
+.gif {
+  width: 50%;
+}
 
 .post-title {
   font-size: 3rem;
@@ -49,6 +53,7 @@
   & a {
     color: #CAE4F1;
     transition: all 0.4s ease-in-out;
+
     &:hover {
       color: #E2F9B8;
     }
@@ -73,10 +78,12 @@
     color: #011627;
   }
 }
+
 .nice-text h4,
 .nice-text p {
   color: white;
 }
+
 .nice-text p {
   margin-bottom: 0;
 }
@@ -93,18 +100,19 @@
   border: 6px solid black;
   color: white;
 }
+
 .mdx-page {
   width: 85vw;
   max-width: 1100px;
   margin: 4rem auto;
 }
+
 .mdx-img p {
   width: 20rem;
 }
 
 .inline-img {
   width: 50%;
-
 }
 
 ol {
@@ -126,6 +134,7 @@ li {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
   & p {
     margin-top: 0.5rem;
     text-align: center;
@@ -140,15 +149,29 @@ hr {
   border-width: 2px;
 }
 
+@media screen and (max-width: 479px) {
+
+  .gif,
+  .inline-img {
+    width: 90%;
+  }
+
+  .gif {
+    height: 80%;
+  }
+}
+
 @media screen and (min-width: 992px) {
   .posts {
     width: 92vw;
   }
+
   .nice-text {
     margin-left: -2rem;
     margin-right: -2rem;
   }
 }
+
 @media screen and (min-width: 1170px) {
   .posts-center {
     display: grid;

@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import Layout from "../components/Layout"
 // import Hero from '../components/Hero'
 import styled from "styled-components"
@@ -6,11 +6,12 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 // import Banner from '../components/Banner'
 import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
-
-import Gitalk from "gatsby-plugin-gitalk"
-import "@suziwen/gitalk/dist/gitalk.css"
+import commentBox from "commentbox.io"
 
 const PostTemplate = ({ data }) => {
+  useEffect(() => {
+    commentBox("5695195966341120-proj")
+  }, [])
   const {
     mdx: {
       frontmatter: { title, category, image, date, embeddedImages },
@@ -41,7 +42,7 @@ const PostTemplate = ({ data }) => {
         </article>
         {/* banner component */}
         <article>{/* <Banner /> */}</article>
-        <Gitalk />
+        <div className="commentbox" />
       </Wrapper>
     </Layout>
   )
