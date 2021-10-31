@@ -1,5 +1,7 @@
-My personal site, using Gatsby!
+# My personal site, using Gatsby!
 
-[Gatsby](https://miro.medium.com/max/1000/1*G9aVAI3aezHLw_JsiCfB1Q.jpeg)
+<img src="https://miro.medium.com/max/1000/1*G9aVAI3aezHLw_JsiCfB1Q.jpeg" width="200px">
 
-Read more about the development of this site, using my site, [here!](https://rmaa.dev/posts/my-first-blog-post)
+### Read more about the development of this site, using my site, [here!](https://rmaa.dev/posts/my-first-blog-post)
+
+React, GraphQL, Gatsby, Sass
