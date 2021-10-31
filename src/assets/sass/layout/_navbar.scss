@@ -10,6 +10,46 @@
   max-width: $max-width; // cap this width as well $max-width: 1120px;
 }
 
+@keyframes hinge {
+  0% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scaleX(0.75) scaleY(0.75);
+    background: #C2F9BB;
+    color: #20063B;
+  }
+  // 40% {transform: scaleX(0.9) scaleY(0.9);
+  //   background: $grey-200;
+  //   color: $grey-1100;
+  // }
+  60% {transform: scaleX(1.15) scaleY(1.15);
+    background: #2B50AA;
+    color: #FF858D;
+  }
+  100% {transform: scale(1);
+    background: $grey-900;
+    color: $grey-300;
+  }
+}
+
+
+.my-name {
+  padding: 0.5rem 1rem; 
+  font-size: 3rem;
+  animation-duration: 2.5s;
+  z-index: 1;
+  animation-play-state: paused;   
+  border-radius: 30%;
+
+  &:hover {
+    animation-fill-mode: both;
+    animation-iteration-count: 1;
+    animation-name: hinge;
+    animation-play-state: running;  
+  }
+}
+
 .nav-header {
   height: $nav_height; // 6rem
   display: flex;
@@ -21,7 +61,7 @@
     width: 300px;
     margin-left: -6px;
     margin-bottom: -9px;
-    color: magenta;
+    color: white;
     text-decoration: none;
     transition: all 0.2s ease-out;
 
@@ -34,10 +74,6 @@
     }
   }
 
-  & p { // aka the "home" button which is my name
-    font-size: 3.5rem;
-    margin-left: 0.5rem;
-  }
 }
 
 
@@ -96,8 +132,9 @@
 .blog-link {
   display: flex;
   justify-content: center;
+  border-top: 1px solid $grey-500;
   align-items: center;
-  margin-right: 1rem;
+  padding-top: 1rem;
 }
 
 
@@ -131,16 +168,18 @@
   }
 
   .nav-link {
-    padding: 0;
+    padding: 0.25rem 0.25rem;
+    border-radius: 10%;
     border-top: none; // no border line like in mobile
     margin-right: 2rem;
     margin-left: 0.2rem;
-    font-size: 1rem;
+    font-size: 1.3rem;
     width: auto;
     transition: all 0.3s ease-in-out;
-
+    
     &:hover {
       color: yellow;
+      background: #23B5D3;
       transform: scale(1.1, 1.2);
     }
   }
@@ -151,6 +190,8 @@
     justify-content: flex-end; // put this at the end
     align-items: center;
     margin-right: 0;
+    border-top: none;
+    margin-top: 0;
   }
 }
 

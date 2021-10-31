@@ -112,7 +112,7 @@
 
 .tags-list {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr; // 3 column layout on mobile
+  grid-template-columns: 1fr 1fr; // 3 column layout on mobile
 }
 
 .tags-list button {
@@ -121,7 +121,7 @@
   display: block;
   color: white;
   transition: all 0.2s ease-in-out;
-  margin-bottom: 0.5rem;
+  margin: 0.25rem 0.5rem;
   text-align: center;
   border-radius: 25px;
 
@@ -211,6 +211,12 @@
   }
 }
 
+.project-tag p {
+  background-color: #A2AEBB;
+  padding: 0.5rem 0.5rem;
+  border-radius: 25px;
+}
+
 .project-tags {
   display: flex;
   flex-wrap: wrap;
@@ -219,8 +225,7 @@
   & p {
     color: white;
     margin: 0.5rem 0.75rem;
-    padding: 0.5rem 0.5rem;
-    border-radius: 25px;
+
     transition: all 0.2s ease-in-out;
 
     &:hover {
@@ -230,13 +235,25 @@
 }
 
 .tag-selected {
-  background: #05EF05;
+  background-color: #05EF05 !important;
   color: black !important;
+}
+
+.troll {
+  font-size: 1rem !important;
 }
 
 @media screen and (max-width: 479px) {
   .project-quote p {
     font-size: 1rem;
+  }
+
+  .troll {
+    font-size: 0.6rem !important;
+  }
+
+  .tags-list button {
+    margin: 0.5rem 0.5rem;
   }
 }
 

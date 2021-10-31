@@ -63,6 +63,7 @@ const About = () => {
               alt="EDM"
               className="hobby-img" // applied this class to wrapper
               placeholder="blurred"
+              imgStyle={{ objectFit: "contain" }}
             ></StaticImage>
           </div>
           <h1 className="hobby-title">CYBERSECURITY</h1>
@@ -91,6 +92,36 @@ const About = () => {
               alt="EDM"
               className="hobby-img" // applied this class to wrapper
               placeholder="blurred"
+              imgStyle={{ objectFit: "contain" }}
+            ></StaticImage>
+          </div>
+          <h1 className="hobby-title">Game Development</h1>
+          <div className="hobby">
+            <div className="hobby-descriptions">
+              <p>
+                Games are awesome (in moderation of course &#128527;). In the past when I have finished playing
+                a really good game (Subnautica, Witcher 3, Portal 2, etc.) it's really 
+                inspiring to me as a programmer. Because, at the end of every game is a team 
+                of people (sometimes just a few) that created it from absolutely nothing but their 
+                blank game engine and a whole lot of creativity and hard work.
+              </p>
+              <p>
+                Now I'm not trying to become the next Toby Fox. Nor am I going into the game dev 
+                industry, at least for now. It's still just a hobby. But it would be pretty cool if 
+                I could get somewhat good at developing games... Maybe even release something someday 
+                onto a store for others to play. After all, the biggest flex (to me at least) is being 
+                able to say that you helped developed something as good as Hollow Knight. Knowing that you 
+                helped brighten the day of millions of players around the globe. That's awesome, and video games 
+                is one of the few things that can do that.
+              </p>
+            </div>
+            <StaticImage
+              src="../assets/img/hollowknight.jpg"
+              alt="EDM"
+              className="hobby-img" // applied this class to wrapper
+              placeholder="blurred"
+              layout="fullWidth"
+              imgStyle={{ objectFit: "contain" }}
             ></StaticImage>
           </div>
         </div>

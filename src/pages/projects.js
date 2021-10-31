@@ -47,7 +47,10 @@ const Projects = () => {
         </header>
       <main className="page">
         <div className="project-quote">
-          <p>What we learn to do, we learn by doing. ~Thomas Jefferson</p>
+          <p>
+          What we learn to do, we learn by doing. ~Thomas Jefferson
+          {/* <p className="troll">(Sorry I couldn't resist putting a fancy quote here)</p> */}
+          </p>
         </div>
         <div className="project-description">
           <h4>
