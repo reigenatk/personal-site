@@ -10,17 +10,18 @@ require("dotenv").config({
 
 module.exports = {
   /* Your site config here */
+
   siteMetadata: {
     title: "Richard's Personal Site",
     description: "Richard Ma's personal site",
-    author: "Richard Ma"
+    author: "Richard Ma",
   },
   plugins: [
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-
+    `gatsby-plugin-mdx`,
     // contentful
     {
       resolve: `gatsby-source-contentful`,
@@ -28,6 +29,14 @@ module.exports = {
         spaceId: `ui971jbkxd2e`,
         // Learn about environment variables: https://gatsby.dev/env-vars
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+      },
+    },
+    //mdx
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `posts`,
+        path: `${__dirname}/src/posts`,
       },
     },
     {
@@ -58,6 +67,6 @@ module.exports = {
           ],
         },
       },
-    }
+    },
   ],
 }

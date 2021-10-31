@@ -34,9 +34,9 @@
   margin-bottom: 2rem;
 
   & p {
-    background-color: #AB5F4F;
+    background-color: #ab5f4f;
     border-radius: 15px;
-    font-family: 'Nanum Gothic', sans-serif;
+    font-family: "Nanum Gothic", sans-serif;
     font-size: 1.5rem;
     padding: 1rem 3rem;
     color: white;
@@ -49,11 +49,12 @@
   justify-content: center;
   align-items: center;
   transition: all 0.7s;
+  background: #133241;
 
   & h4 {
     color: white;
 
-    font-family: 'Trebuchet MS', serif;
+    font-family: "Trebuchet MS", serif;
     padding: 1rem 3rem;
     text-align: center;
   }
@@ -61,7 +62,7 @@
   margin-bottom: 2rem;
 
   &:hover {
-    background: #6CC5D1;
+    background: #6cc5d1;
     transform: scale(1.05);
   }
 }
@@ -72,12 +73,19 @@
 .recipes-container {
   display: grid;
   gap: 2rem 2rem;
+  background: #070d0d;
+  padding: 2rem 1.5rem;
+}
+
+.recipes-holder {
+
 }
 
 .recipes-list {
   display: grid;
   gap: 2rem 3rem;
   padding-bottom: 3rem;
+  
 }
 
 .tag-container {
@@ -85,44 +93,45 @@
   display: flex;
   flex-direction: column;
   transition: all 0.5s ease-in-out;
+  background-color: #27474E;
+  padding: 1rem 1rem;
+  border-radius: 20px;
+
   & h4 {
     margin-bottom: 0.5rem;
     font-weight: bold;
-    color: green;
+    color: #ABE9AE;
     text-align: center;
     font-size: 2rem;
   }
 
   &:hover {
-    background-color: #27474E;
-
+    // background-color: #27474E;
   }
-
 }
 
 .tags-list {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr; // 3 column layout on mobile
-  
 }
 
-
-.tags-list a {
+.tags-list button {
   text-transform: capitalize;
   text-decoration: none;
   display: block;
-  color: #94C5CC;
+  color: white;
   transition: all 0.2s ease-in-out;
   margin-bottom: 0.5rem;
   text-align: center;
   border-radius: 25px;
+
+  padding: 0.5rem 0;
 
   &:hover {
     color: white;
     background: #447604;
   }
 }
-
 
 
 .recipe {
@@ -135,7 +144,21 @@
   &:hover {
     transform: scale(1.05); // zoom in a little
     box-shadow: 1.5rem 1.5rem 40rem rgba(white, 0.1); // increase shadow
-    outline: 0.2rem solid #E8706C; // hover color
+    outline: 0.2rem solid #e8706c; // hover color
+  }
+
+  & h5 {
+    margin: 1rem 0.5rem;
+    line-height: 1;
+    color: white;
+    font-weight: 600;
+    font-size: 2rem;
+  }
+
+  & p {
+    margin: 1rem 0.5rem;
+    line-height: 1;
+    color: #f7f700;
   }
 }
 
@@ -145,38 +168,77 @@
   margin: 0.5rem 0.5rem;
 }
 
-.recipe h5 {
-  margin: 1rem 0.5rem;
-  line-height: 1;
-  color: #ADD8E6;
-  font-weight: 600;
-  font-size: 2rem;
+.recipe-bg-1 {
+  background: #1f0f05;
 }
 
-.recipe p {
-  margin: 1rem 0.5rem;
-  line-height: 1;
-  color: #F7F700;
+.recipe-bg-2 {
+  background: #052D0A;
+}
+
+.recipe-bg-3 {
+  background: #545775;
+}
+
+.recipe-bg-4 {
+  background: #994636;
+}
+
+.recipe-bg-5 {
+  background: #757761;
+}
+
+.no-projects {
+  color: #946e83;
+  font-size: 5rem;
+  text-align: center;
+}
+
+.reset-tags-button {
+  background: #8b0000;
+}
+
+.animation-block {
+  width: 100%;
+  flex-grow: 1;
+  padding: 5rem 5rem;
+  transition: all 1s;
+
+  /* control the btn hover transform here */
+  &:hover {
+    background-color: #daad86;
+    text-shadow: 1px 5px 1px rgba($color-black, 0.1);
+  }
 }
 
 .project-tags {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 
   & p {
-    color: #94C5CC;
+    color: white;
     margin: 0.5rem 0.75rem;
     padding: 0.5rem 0.5rem;
     border-radius: 25px;
-    transition: all 0.2s ease-in-out; 
+    transition: all 0.2s ease-in-out;
+
     &:hover {
-      background-color: #FB4B4E;
+      background-color: #fb4b4e;
     }
   }
-
-
 }
 
+.tag-selected {
+  background: #05EF05;
+  color: black !important;
+}
+
+@media screen and (max-width: 479px) {
+  .project-quote p {
+    font-size: 1rem;
+  }
+}
 
 @media screen and (min-width: 576px) {
   .recipes-list {
@@ -194,7 +256,6 @@
 
     line-height: 2rem;
   }
-
 }
 
 @media only screen and (min-width: 768px) {
@@ -249,10 +310,10 @@
 
 @media screen and (min-width: 1200px) {
   .recipe h5 {
-    font-size: 1.15rem;
+    font-size: 2rem;
   }
 
   .recipes-list {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 }

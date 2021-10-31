@@ -1,0 +1,210 @@
+---
+title: My First Blog Post
+slug: my-first-blog-post
+image: ./images/happyseal.jpg
+date: 2021-10-29
+category: Miscellanious
+readTime: 5
+postDescription: Musings on the creation of my site!
+isMdxPost: true
+embeddedImages:
+  - ./images/greatgatsby.jpg
+  - ./images/contentful.PNG
+  - ./images/gatsbystack.png
+---
+
+
+import { Link } from 'gatsby'
+import { GatsbyImage, getImage, StaticImage } from 'gatsby-plugin-image'
+import styled from 'styled-components'
+import { FiInfo } from 'react-icons/fi'
+import {Video } from '../../components/Video.js'
+
+
+<section className="mdx-page">
+
+<div className="post-content">
+
+# A Wild Blog Appears!
+
+Hey! If you're reading this, you've probably found my personal blog! Glad you're here.
+In this post, I will attempt to recap the construction of my personal site- why I did it,
+what challenges I faced, things I learned, etc.
+
+<hr />
+
+# Motivation
+
+There's not much else to say but the fact that personal sites are awesome! I think lots of 
+employers are tired of reading resume after resume- besides, I get to build something and 
+learn more about web technologies. It's a win win if you ask me, it just takes time to learn.
+
+
+I've seen some really stunning personal sites [(this one for example)](https://montychoy.com/)
+and quite honestly, I kind of went down the rabbit hole of web design again. Some 
+people really know how to make websites! I mean, just look
+at [this one](https://youtu.be/BZqzhmlTkAc?t=200).
+
+Of course, I'm not on that level. Heck, I'm happy if my media queries even work and my site looks
+ok on mobile. Also, I'm not just making this site for recruiters. To me, it will act as a diary of 
+sorts. Whenever I feel like sharing something to my (non)existent audience. Or to just write up 
+a nice blog post of something I learned. All because I don't want to pay $5 a month for Medium &#128540;
+
+<div className="nice-text">
+    
+<h3>Fun Fact</h3>
+
+<FiInfo className="nice-text-icon" />
+
+Personal Sites are Awesome. Okay not gonna lie I just wanted to show off this cool text-box.
+
+</div>
+
+<hr />
+
+# Technologies!
+
+So then, how did I build this mediocre site you ask? Well I used this wonderful framework called **Gatsby**.
+
+<div className="captioned-image">
+<iframe src="https://giphy.com/embed/u4CY9BW4umAfu" width="480" height="242" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+<p>No, not this Gatsby &#128518;</p>
+</div>
+
+**GatsbyJS** is a powerful static site generation framework, which runs on top of three things: **React**,
+**Webpack**, and **GraphQL**. 
+
+<div className="captioned-image">
+<GatsbyImage
+  image={getImage(props.embeddedImages[2])}
+  alt="the great gatsby"
+  className="inline-img"
+/>
+<p>Gatsby is built on React, Webpack and GraphQL</p>
+</div>
+
+
+Now I shouldn't really mention **Webpack**, because as a user of Gatsby I never
+even interfaced with it. From what I understand, Webpack takes your code and breaks it down into modules,
+which allows for easier management, debugging and testing. So it's more of a behind the scenes 
+tool that the average noob like me will never encounter. Maybe I will meet you in the future, Webpack. 
+
+**ReactJS** is a staple in the modern webdev world nowadays. I took a course on it about a year ago,
+and honestly enjoyed it a lot. There's something about writing javascript as opposed to the 
+traditional HTML/CSS that makes you feel more sophisticated. But it also is a lot more powerful 
+in the sense that you can create components and re-use them everywhere. And with hooks, props, 
+and just javascript in general being a very flexible language, you can create essentially anything
+you want.
+
+As for **GraphQL**, this was an eye opener for me while making this project. Traditionally when making
+a site, you put all the content inside of the HTML/CSS files. But GraphQL allows for something called
+a **Headless CMS**, or content-management system. I employed one called [Contentful](https://www.contentful.com/)
+to manage my project page! Essentially, a CMS abstracts everything about the code away from a user, 
+so you can just focus on the content you are writing. The instant you are done, simply press publish,
+and it will appear as a new page on your site like magic! 
+
+<div className="captioned-image">
+<GatsbyImage
+  image={getImage(props.embeddedImages[1])}
+  alt="the great gatsby"
+  fadeIn
+  className="inline-img"
+/>
+<p>I can just write the projects descriptions for my site in a completely separate graphical interface!</p>
+</div>
+
+GraphQL is what makes this all possible: it connects to the CMS, and then you can easily query
+for all the data that you are interested in via the graphQL playground. After writing your query 
+and fetching it, the data will appear as props inside your components, where you can 
+destructure the data and display inside the render function in React!
+
+<hr />
+
+# More Things I learned
+
+Here are some other technologies that I interacted with for the first time, or reinforced in my head
+through this project!
+
+
+1. **Responsive Design Patterns**
+
+    This is the one part of webdev I absolutely despise, but I think it's safe to say I've conquered
+    my fear of responsive design a little bit through this project. I learned about:
+
+    - **Media Queries**
+        
+        Learned some common widths and heights.
+        For example, iPhone 6 screen is only 375 x 667 viewport width even though the resolution 
+        is around twice that). For reference, desktop is 1920 x 1080! So almost 6x smaller on a phone,
+        you need to account for that when making any site!
+    
+        How to use "min-width", "max-width", and the likes. Learned what should be changed in 
+        media queries (usually font sizes, or grid column layouts, but also for things like navbar buttons)
+    - **No hard coding pixels**
+        
+        Learned how to use root-font-size (16px default at 100%), and how you can (and should) 
+        use "rem" absolutely everywhere. 
+2. **GraphQL** is super cool
+
+    It's so organized! No wonder [Ben Awad](https://www.youtube.com/channel/UC-8QAzbLcRglXeN_MY9blyw) 
+    is in love with it...
+3. **CSS Transitions and Animations** are an easy way to improve a site
+
+    So I touched CSS transitions and animations for the first time, still pretty beginner but I
+    tried to spice up the site with them. I'd say it helped! Will keep working on this.
+4. **CSS Grid + Flexbox** are lifesavers for responsive design
+
+    CSS Grid and Flexbox are some of the most powerful CSS tools today, or so I was told. 
+    After trying to make this site I can see why. They both do so much work behind the scenes, and 
+    make designing things very intuitive.
+5. General CSS properties
+
+    - Padding + border radius are super important for buttons and layout in general
+    - Margin should be used carefully and only when you really need it. 
+    - Also learned about the reset trick for box-sizing and margins/padding:
+    ```css
+        *,
+        *::after,
+        *::before {
+            margin: 0;
+            padding: 0;
+            box-sizing: inherit;
+        }
+    ```
+    - Finally, finding good colors schemes are hard &#128577; but [this site](coolors.co) is pretty cool
+6. **Styled Components** are super useful because you don't have to worry about colliding class names
+
+    Also heard a lot about Styled Components in the past, tried them for the first time. 
+    They are pretty easy to use and make. 10/10
+
+7. **SASS** is the best invention ever and should honestly be in default CSS 
+
+    First off, thank god I can comment with "//" instead of "/* */", that saves so much time.
+    Also, SASS variables are awesome, and allow for even more customizability. Nested CSS is just
+    so much more intuitive. And the ability to split everything into its own file, 
+    makes everything easy to organize. Sass is just better CSS and I have only positives about it.
+8. Component based design! 
+
+    If you are making something that will be reused, put it into a component. I had too many components 
+    to count in this project. Navbar, Footer are some obvious ones but there are more interesting 
+    use cases like a search engine optimization component that is present in each page, creating metadata 
+    tags.
+9. **MDX** support for Blog posts! 
+
+    I've never been a big user of Markdown, but I guess now is the time to practice! Gatsby has a 
+    plugin called "gatsby-plugin-mdx" which offers support for MDX. MDX
+    is essentially normal Markdown but with support for JSX, meaning you can import entire 
+    components and put them into your Markdown file! For example, code snippets are made easy 
+    using MDX. Or say you want to have a nice graphic with a responsive component. I think it'll 
+    be helpful if in the future, I want ever want to do something like this in a post.
+
+<hr />
+
+# Anyways...
+
+If you've gotten this far, thanks for reading! I'm excited to add more content in the future 
+and fill this website up with awesome stuff, both non-tech and tech related. 
+
+</div>
+
+</section>

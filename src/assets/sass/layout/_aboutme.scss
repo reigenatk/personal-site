@@ -1,48 +1,187 @@
-.row {
+.about-quote {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+
+  & p {
+
+    border-radius: 15px;
+    font-family: "Nanum Gothic", sans-serif;
+    font-size: 1.5rem;
+    padding: 1rem 3rem;
+    color: white;
+    text-align: center;
+    background: #004FFF;
+    transition: all 0.75s ease-out;
+
+
+    &:hover {
+      transform: scale(1.2)
+    }
+  }
 }
+
+.hobby-img {
+  border-radius: 100px;
+  transition: all 0.2s ease-in;
+
+  &:hover {
+    border-radius: 15px;
+    transform: scale(1.02)
+  }
+}
+
+.hobby-descriptions {
+  background: #222222;
+  margin-bottom: 3rem;
+
+  & p {
+    color: white;
+    margin-bottom: 2rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
+    margin-top: 2rem;
+    font-size: 1.3rem;
+    letter-spacing: 0.005rem;
+  }
+
+  transition: all 0.2s ease-in;
+
+  &:hover {
+    border-radius: 15px;
+    transform: scale(1.02)
+  }
+}
+
+#edm-link {
+  text-decoration: none;
+  color: #FF007F;
+}
+
+#sc-link {
+  text-decoration: none;
+  color: #be9a71;
+}
+
+.section-center {
+  width: 75vw;
+  margin: 0 auto;
+  max-width: 1000px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.hobby {
+  display: grid;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  width: 60vw;
+  // grid-template-columns: repeat(2, 1fr);
+}
+
+.hobby-title {
+  font-size: 1.5rem;
+  margin: 0 auto;
+  color: white;
+  background: #420420;
+  transition: all 0.5s;
+  padding: 0.5rem 4rem;
+  width: 100%;
+  text-align: center;
+  
+  &:hover {
+    color: white;
+    background: #003366;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  /* start of phone styles */
+  .hobby-descriptions {
+    & p {
+      font-size: 0.9rem;
+    }
+  }
+
+  .about-quote {
+    & p {
+      font-size: 1rem;
+    }
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .hobby-title {
+    font-size: 2rem;
+  }
+}
+
+
+@media screen and (min-width: 900px) {
+  .hobby-title {
+    font-size: 3rem;
+  }
+}
+
+
+@media screen and (min-width: 1335px) {
+  .section-center {
+    width: 80vw;
+  }
+
+  .hobby {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+  }
+
+  .hobby-descriptions {
+    margin-bottom: 0;
+  }
+
+  .hobby-title {
+    width: 1000px;
+    padding: 0.5rem 10rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+// .row {
+//   display: flex;
+//   justify-content: space-around;
+// }
 
 // .flex-item div:first-child {
 //     height: 0%;
 // }
 
-.flex-item {
-  width: 50%;
-  margin-left: 3rem;
-  margin-right: 3rem;
-  align-items: flex-start;
-}
+// .flex-item {
+//   width: 50%;
+//   margin-left: 3rem;
+//   margin-right: 3rem;
+//   align-items: flex-start;
+// }
 
-#about {
-  background-color: #0c0032;
-}
 
-.heading-hover {
-  margin-top: 6rem;
-  margin-bottom: 2rem;
-  transition: all 1s; /* control the btn hover transform here */
-  &:hover {
-    background-color: #4887b0;
-    text-shadow: 1px 1px 1px rgba($color-black, 0.2);
-  }
-}
+// .heading-hover {
+//   margin-top: 6rem;
+//   margin-bottom: 2rem;
+//   transition: all 1s;
 
-.animation-block {
-  width: 100%;
-  flex-grow: 1;
-  padding: 5rem 5rem;
-  transition: all 1s; /* control the btn hover transform here */
-  &:hover {
-    background-color: #daad86;
-    text-shadow: 1px 5px 1px rgba($color-black, 0.1);
-  }
-}
-
-.extra-links {
-  display: flex;
-}
-
-.extra-links-item {
-  margin: 3rem auto;
-}
+//   /* control the btn hover transform here */
+//   &:hover {
+//     background-color: #4887b0;
+//     text-shadow: 1px 1px 1px rgba($color-black, 0.2);
+//   }
+// }

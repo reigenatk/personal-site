@@ -9,5 +9,17 @@
    & h1 {
     font-size: 9rem;
     font-family: "Inconsolata";
+    margin: 0rem auto;
+  }
+
+  & h3 {
+    font-size: 3rem;
+    margin: 1rem auto;
+  }
+
+  & p {
+    font-size: 2rem;
+    font-family: "Times New Roman";
+    margin: 1rem auto;
   }
 }

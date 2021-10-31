@@ -2,14 +2,35 @@ import React from "react"
 import Layout from "../components/Layout"
 import { StaticImage } from "gatsby-plugin-image"
 import AllProjects from "../components/AllProjects"
+import { graphql, useStaticQuery } from "gatsby"
 import SEO from "../components/SEO"
 
+const query = graphql`
+  {
+    allContentfulProject(sort: { fields: projectName }) {
+      nodes {
+        projectImage {
+          gatsbyImageData(layout: CONSTRAINED, placeholder: TRACED_SVG)
+        }
+        projectName
+        link
+        id
+        shortDescription
+        content {
+          tags
+        }
+      }
+    }
+  }
+`
+
 const Projects = () => {
+  const data = useStaticQuery(query)
+  const projectdata = data.allContentfulProject.nodes // destructure it a bit
   return (
     <Layout>
     <SEO title="Projects" />
-      <main className="page">
-        <header className="hero">
+    <header className="hero">
           <StaticImage
             src="../assets/img/projectbg.jpg"
             alt="projects"
@@ -24,6 +45,7 @@ const Projects = () => {
             </div>
           </div>
         </header>
+      <main className="page">
         <div className="project-quote">
           <p>What we learn to do, we learn by doing. ~Thomas Jefferson</p>
         </div>
@@ -34,7 +56,7 @@ const Projects = () => {
             using the tags.
           </h4>
         </div>
-        <AllProjects></AllProjects>
+        <AllProjects projects={projectdata}></AllProjects>
       </main>
     </Layout>
   )

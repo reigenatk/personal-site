@@ -24,24 +24,6 @@ const Layout = ({ children }) => {
           rel="stylesheet"
           href="path/to/font-awesome/css/font-awesome.min.css"
         />
-        {/* <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Alegreya+Sans&display=swap"
-          rel="stylesheet"
-        />
-        <link
-          href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900"
-          rel="stylesheet"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Andada+Pro&display=swap"
-          rel="stylesheet"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Scheherazade+New:wght@700&display=swap"
-          rel="stylesheet"
-        /> */}
         <script
           src="https://kit.fontawesome.com/f860f7b393.js"
           crossorigin="anonymous"

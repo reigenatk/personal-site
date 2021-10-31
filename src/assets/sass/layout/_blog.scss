@@ -1,0 +1,158 @@
+.posts {
+    width: 90vw;
+    max-width: 1300px;
+    margin: 0 auto;
+    margin-bottom: 4rem;
+  }
+
+.posts-title {
+  font-weight: 700;
+  text-transform: uppercase;
+  color: white;
+  font-size: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+// .category {
+//   background: #0e2f44 !important;
+//   color: #fff68f !important;
+// }
+
+.post-title {
+  font-size: 3rem;
+  color: white;
+}
+
+.post-content {
+  color: white;
+  padding: 1rem 1rem;
+  background: #545C52;
+  border-radius: 1%;
+  margin: 2rem auto;
+
+  & h1 {
+    font-size: 2rem;
+    color: #41EAD4;
+  }
+
+  // & img {
+  //   width: 50%;
+  //   margin: 1rem auto;
+  // }
+
+  & p {
+    color: white;
+    margin: 2rem 0;
+    letter-spacing: 0.5px;
+  }
+
+  & a {
+    color: #CAE4F1;
+    transition: all 0.4s ease-in-out;
+    &:hover {
+      color: #E2F9B8;
+    }
+  }
+
+  & strong {
+    color: #FFD791;
+  }
+}
+
+
+.nice-text {
+  background: grey;
+  padding: 2rem 1.5rem;
+  border-radius: 2px;
+  border-left: 3px solid magenta;
+  color: white;
+  position: relative;
+
+  & h3 {
+    font-size: 1.5rem;
+    color: #011627;
+  }
+}
+.nice-text h4,
+.nice-text p {
+  color: white;
+}
+.nice-text p {
+  margin-bottom: 0;
+}
+
+.nice-text-icon {
+  position: absolute;
+  top: 0;
+  left: -3px;
+  background: black;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 6px solid black;
+  color: white;
+}
+.mdx-page {
+  width: 85vw;
+  max-width: 1100px;
+  margin: 4rem auto;
+}
+.mdx-img p {
+  width: 20rem;
+}
+
+.inline-img {
+  width: 50%;
+
+}
+
+ol {
+  margin-left: 1rem;
+}
+
+li {
+  & p:not(:first-child) {
+    // first p is the actual li
+    background: #2A2D43;
+    padding: 0.5rem 0.5rem;
+    border-radius: 2%;
+  }
+}
+
+.captioned-image {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  & p {
+    margin-top: 0.5rem;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #BBE1C3;
+  }
+}
+
+hr {
+  color: black;
+  margin: 2rem auto;
+  border-width: 2px;
+}
+
+@media screen and (min-width: 992px) {
+  .posts {
+    width: 92vw;
+  }
+  .nice-text {
+    margin-left: -2rem;
+    margin-right: -2rem;
+  }
+}
+@media screen and (min-width: 1170px) {
+  .posts-center {
+    display: grid;
+    grid-template-columns: 1fr 450px;
+    column-gap: 2.5rem;
+  }
+}

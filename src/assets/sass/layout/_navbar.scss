@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 2rem;
 }
 
 .nav-center {
@@ -12,7 +13,7 @@
 .nav-header {
   height: $nav_height; // 6rem
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 
 
@@ -22,12 +23,23 @@
     margin-bottom: -9px;
     color: magenta;
     text-decoration: none;
+    transition: all 0.2s ease-out;
+
+    &:hover {
+      transform: scale(1.05, 1.2);
+    }
+
+    &:active {
+      transform: translateY(10px);
+    }
   }
 
-  & p {
-    font-size: 50px;
+  & p { // aka the "home" button which is my name
+    font-size: 3.5rem;
+    margin-left: 0.5rem;
   }
 }
+
 
 .nav-btn svg {
   font-size: 3.5rem;
@@ -52,7 +64,7 @@
 }
 
 .show-links {
-  height: 30rem;
+  height: 23rem;
 }
 
 .nav-link {
@@ -60,11 +72,20 @@
   text-align: center;
   text-transform: capitalize;
   color: $white;
+  font-size: 1.5rem;
   letter-spacing: $letterSpacing;
   padding: 1rem 0;
   border-top: 1px solid $grey-500;
-  transition: $transition;
   text-decoration: none;
+
+  & p {
+    transition: all 0.05s ease-out;
+
+    &:active {
+      transform: translateY(10px);
+    }
+  }
+
 }
 
 .active-link {
@@ -75,14 +96,11 @@
 .blog-link {
   display: flex;
   justify-content: center;
-
+  align-items: center;
+  margin-right: 1rem;
 }
 
-.blog-link a {
-  padding: 0.15rem 1rem;
-  color: white;
-  text-decoration: none;
-}
+
 
 // "desktop mode" 
 @media screen and (min-width: 992px) {
@@ -116,8 +134,15 @@
     padding: 0;
     border-top: none; // no border line like in mobile
     margin-right: 2rem;
-    font-size: 1.5rem;
+    margin-left: 0.2rem;
+    font-size: 1rem;
     width: auto;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      color: yellow;
+      transform: scale(1.1, 1.2);
+    }
   }
 
   .blog-link {
@@ -129,39 +154,29 @@
   }
 }
 
-//   button,
-//   .btn {
-//     cursor: pointer;
-//     appearance: none;
-//     color: var(--white);
-//     background: var(--primary-500);
-//     border: none;
-//     border-radius: var(--borderRadius);
-//     letter-spacing: var(--letterSpacing);
-//     padding: 0.375rem 0.75rem;
-//     box-shadow: var(--shadow-1);
-//     transition: var(--transition);
-//     text-transform: capitalize;
-//   }
-//   button:hover,
-//   .btn:hover {
-//     color: var(--white);
-//     background: var(--primary-700);
-//     box-shadow: var(--shadow-2);
-//   }
-//   button.small {
-//     padding: 0.25rem 0.5rem;
-//     font-size: var(--smallText);
-//   }
-//   button.hipster {
-//     color: var(--primary-500);
-//     background: var(--primary-50);
-//     box-shadow: var(--shadow-1);
-//   }
-//   button.hipster:hover {
-//     background: var(--primary-100);
-//     box-shadow: var(--shadow-2);
-//   }
-//   button.block {
-//     width: 100%;
-//   }
+// if smaller than 350px wide (iphone5, etc.)
+@media screen and (max-width: 390px) {
+
+  .nav-header p {
+    font-size: 2.5rem;
+  }
+
+  .nav-link,
+  .blog-link {
+    font-size: 1.25rem;
+  }
+}
+
+@media screen and (max-width: 290px) {
+  .nav-header p {
+    font-size: 2rem;
+  }
+  }
+
+@media screen and (min-width: 1150px) {
+
+  .nav-link,
+  .blog-link {
+    font-size: 1.45rem;
+  }
+}

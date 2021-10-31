@@ -67,3 +67,13 @@ yarn-error.log
 .pnp.js
 # Yarn Integrity file
 .yarn-integrity
+
+
+static/
+*.png
+*.jpg
+*.PNG
+*.gif
+favicon.ico
+site.webmanifest
+LICENSE

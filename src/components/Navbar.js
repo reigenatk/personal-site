@@ -23,12 +23,12 @@ const Navbar = () => {
           <Link to="/" className="nav-link" activeClassName="active-link" onClick={() => {
               setShow(false)
             }}>
-            Home
+            <p>Home</p>
           </Link>
           <Link to="/about" className="nav-link" activeClassName="active-link" onClick={() => {
               setShow(false)
             }}>
-            About&nbsp;Me
+            <p>About</p>
           </Link>
           <Link
             to="/projects"
@@ -37,7 +37,7 @@ const Navbar = () => {
               setShow(false)
             }}
           >
-            Projects
+            <p>Projects</p>
           </Link>
           <Link
             to="/experience"
@@ -46,9 +46,9 @@ const Navbar = () => {
               setShow(false)
             }}
           >
-            Experience
+            <p>Experience</p>
           </Link>
-          <div className="nav-link blog-link">
+          <div className="blog-link">
             <Link to="/blog" className="btn" onClick={() => {
               setShow(false)
             }}>

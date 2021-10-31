@@ -6,19 +6,29 @@ import { FaGlobeAmericas } from "react-icons/fa"
 import Layout from "../components/Layout"
 import slugify from "slugify"
 import SEO from "../components/SEO"
+import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 // Behind the scenes, gatsby creates a new page for every recipe with the ending /title
 // and uses this template to build the page
 
 const ProjectTemplate = ({ data }) => {
-  const { id, projectName, content, link, githubLink, description, shortDescription, projectImage, devTime} =
-    data.contentfulProject
+  const {
+    id,
+    projectName,
+    content,
+    link,
+    githubLink,
+    description,
+    shortDescription,
+    projectImage,
+    devTime,
+  } = data.contentfulProject
   const pathToImg = getImage(projectImage)
   const { tags, features } = content
   console.log(data)
   return (
     <Layout>
-    <SEO title={projectName} description={shortDescription} />
+      <SEO title={projectName} description={shortDescription} />
       <main className="page">
         <div className="recipe-page">
           {/* hero */}
@@ -30,13 +40,21 @@ const ProjectTemplate = ({ data }) => {
             />
             <article className="recipe-info">
               <h2>{projectName}</h2>
-              <p>{description.description}</p>
+              <MDXRenderer>{description.childMdx.body}</MDXRenderer>
               {/* icons */}
+              <div className="icons-and-tags">
               <div className="recipe-icons">
-                <a href={link}>
-                  <FaGlobeAmericas></FaGlobeAmericas>
-                  <h5>Link to Site</h5>
-                </a>
+                {link == "N/A" ? (
+                  <a href=".">
+                    <FaGlobeAmericas></FaGlobeAmericas>
+                    <h5>N/A :(</h5>
+                  </a>
+                ) : (
+                  <a href={link}>
+                    <FaGlobeAmericas></FaGlobeAmericas>
+                    <h5>Link to Site</h5>
+                  </a>
+                )}
                 <a href={githubLink}>
                   <BsGithub />
                   <h5>Github Link</h5>
@@ -60,6 +78,7 @@ const ProjectTemplate = ({ data }) => {
                   )
                 })}
               </p>
+              </div>
             </article>
           </section>
           {/* rest of the content */}
@@ -90,7 +109,9 @@ export const query = graphql`
     contentfulProject(projectName: { eq: $projectName }) {
       link
       description {
-        description
+        childMdx {
+          body
+        }
       }
       projectImage {
         gatsbyImageData

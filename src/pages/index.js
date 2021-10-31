@@ -8,49 +8,82 @@ import SEO from "../components/SEO"
 export default function Home() {
   return (
     <Layout>
-      <SEO title="Home Page"/>
-      {/* <header class="header"> */}
-        {/* <div class="header__logo-box">
-          <img src="img/nepi.png" alt="logo" class="header__logo" />
-        </div> */}
-        {/* <div class="header__text-box">
-          <h1 class="heading-primary">
-            <span class="heading-primary--main">Richard Ma</span>
-            <span class="heading-primary--sub">Lifelong Learner</span>
-          </h1>
-
-          <a href="#about" class="btn-start btn-white btn-animated">
-            Continue!
-          </a>
-        </div> */}
-        
-      {/* </header> */}
+      <SEO title="Home Page" />
       <main className="page">
-        <section className="home-page"> 
-          <article>
+        <section className="home-page">
+          <article class="website-description">
             <h2>Hi! I'm Richard.</h2>
             <p>
-              And this is my personal site! I think having a place on the internet for people
-              to learn more about you is really cool. Please feel free to look around and learn more about me.
+              And this is my personal site! I've always wanted to have a place
+              where I can write down everything about myself, not just for
+              employers and friends, but also for myself. So I'm excited to have
+              made this!
             </p>
             <p>
-              I am studying computer science at the University of Illinois, Urbana Champaign.
-              I am planning to graduate in Spring of 2023. I have interned at two companies, Capital One and Synchem, 
-              and am looking to enter the software engineering industry after graduation.
+              I am studying computer science at the{" "}
+              <span class="font-uiuc">
+                University of Illinois, Urbana Champaign.
+              </span>{" "}
+              I am planning to graduate in{" "}
+              <span class="green">Spring of 2023.</span> You can see the
+              companies I've interned at, my coursework, or some of my projects,
+              using the navigation above.
             </p>
-            <p>
-              I need more good pictures of myself...
-            </p>
-            <Link to="/about" className="btn">
-              Continue...
-            </Link>
           </article>
-          <StaticImage
-            src="../assets/img/meee.jpg"
-            alt="a person"
-            className="home-img" // applied this class to wrapper
-            placeholder="blurred"
-          ></StaticImage>
+          <article>
+            <StaticImage
+              src="../assets/img/meee.jpg"
+              alt="a person"
+              className="home-img" // applied this class to wrapper
+              placeholder="tracedSVG"
+            ></StaticImage>
+            <div class="extra-links">
+              <div class="resume extra-links-item btn-text">
+                <a
+                  class="u-remove-underline"
+                  href="img/Richard_Ma_Resume.pdf"
+                  download
+                >
+                  <div className="resume-div">
+                    {/* <img id="resume_pic" src="resume-image.jpg" /> */}
+                    <h5 class="resume-text">Resume</h5>
+                  </div>
+                </a>
+              </div>
+              <div class="extra-links-item btn-text">
+                <a
+                  class="u-remove-underline quick-links"
+                  href="https://github.com/reigenatk"
+                >
+                  <i class="fa fa-github" aria-hidden="true"></i>
+                </a>
+              </div>
+              <div class=" extra-links-item btn-text">
+                <a
+                  class="u-remove-underline quick-links"
+                  href="https://soundcloud.com/user-652744745-788731291"
+                >
+                  <i class="fa fa-soundcloud" aria-hidden="true"></i>
+                </a>
+              </div>
+              <div class="extra-links-item btn-text">
+                <a
+                  class="u-remove-underline quick-links"
+                  href="https://codeforces.com/profile/richardma2002"
+                >
+                  <img class="quick-links-pic" src="codeforces.PNG" />
+                </a>
+              </div>
+              <div class="extra-links-item btn-text">
+                <a
+                  class="u-remove-underline quick-links"
+                  href="https://www.linkedin.com/in/richard-ma-151746b1/"
+                >
+                  <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+          </article>
         </section>
       </main>
     </Layout>

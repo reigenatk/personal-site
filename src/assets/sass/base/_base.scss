@@ -25,7 +25,7 @@ body {
   // padding-left: 30px;
   // padding-right: 30px;
 
-  background-color: black;
+  background-color: #504f54;
 
   // custom cursor
   // cursor: none;
@@ -86,12 +86,17 @@ a {
 }
 
 .page {
+  margin-top: 2rem;
   width: 90vw; // same as navbar
   max-width: $max-width;
   margin: 0 auto; // center
-  padding-top: 2rem;
+  padding-top: 0.5rem;
 
   min-height: calc(100vh - (6rem + 4rem)); // take up 100% of height at least
+}
+
+button {
+  background: none;
 }
 
 

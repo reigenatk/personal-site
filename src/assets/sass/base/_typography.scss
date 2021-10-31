@@ -11,11 +11,14 @@ body {
   color: #fff;
   text-transform: uppercase;
 
-  backface-visibility: hidden; /* fix the animation bug */
+  backface-visibility: hidden;
+  /* fix the animation bug */
   width: 100vh;
+
   &--main {
     display: block;
-    font-size: 10rem; /* REM is relative to root font size */
+    font-size: 10rem;
+    /* REM is relative to root font size */
     font-weight: 400;
     letter-spacing: 3.5rem;
 
@@ -71,14 +74,22 @@ body {
   letter-spacing: 0.05rem;
   line-height: 4rem;
   color: white;
+
   &:not(:last-child) {
     margin-bottom: 3rem;
   }
 }
 
 .font-uiuc {
-  margin: 1rem;
   color: #e84a27;
+}
+
+.green {
+  color: #90ee90;
+}
+
+.blue {
+  color: #00FFFF;
 }
 
 #UIUCpic {
@@ -105,10 +116,6 @@ body {
 
 .quick-links-pic {
   width: 50px;
-}
-
-.resume-text {
-  color: #ffc0cb;
 }
 
 .fa-github {
