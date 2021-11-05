@@ -10,7 +10,11 @@ import commentBox from "commentbox.io"
 
 const PostTemplate = ({ data }) => {
   useEffect(() => {
-    commentBox("5695195966341120-proj")
+    commentBox("5695195966341120-proj", {
+      textColor: "#fff",
+      subtextColor: "#fff",
+      backgroundColor: "#000",
+    })
   }, [])
   const {
     mdx: {

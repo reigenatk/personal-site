@@ -1261,7 +1261,7 @@ Jobs
 
 .post-content {
   color: white;
-  padding: 1rem 1rem;
+  padding: 1rem 2rem;
   background: #545C52;
   border-radius: 1%;
   margin: 2rem auto; }
@@ -1280,6 +1280,11 @@ Jobs
   .post-content strong {
     color: #FFD791; }
 
+.question {
+  margin: 1rem auto;
+  text-align: center;
+  border: 2px dotted #28ea2f; }
+
 .nice-text {
   background: grey;
   padding: 2rem 1.5rem;
@@ -1289,7 +1294,7 @@ Jobs
   position: relative; }
   .nice-text h3 {
     font-size: 1.5rem;
-    color: #011627; }
+    color: yellow; }
 
 .nice-text h4,
 .nice-text p {
@@ -1319,13 +1324,14 @@ Jobs
   width: 20rem; }
 
 .inline-img {
+  margin: 1rem 0.5rem;
   width: 50%; }
 
-ol {
-  margin-left: 1rem; }
+ol,
+ul {
+  margin-left: 2rem; }
 
 li p:not(:first-child) {
-  background: #2A2D43;
   padding: 0.5rem 0.5rem;
   border-radius: 2%; }
 
@@ -1344,6 +1350,12 @@ hr {
   color: black;
   margin: 2rem auto;
   border-width: 2px; }
+
+.comment-body p {
+  color: white; }
+
+.left p {
+  color: white; }
 
 @media screen and (max-width: 479px) {
   .gif,

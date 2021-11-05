@@ -4,13 +4,14 @@ slug: my-first-blog-post
 image: ./images/happyseal.jpg
 date: 2021-10-29
 category: Miscellanious
-readTime: 5
+readTime: 15
 postDescription: Musings on the creation of my site!
 isMdxPost: true
 embeddedImages:
   - ./images/greatgatsby.jpg
   - ./images/contentful.PNG
   - ./images/gatsbystack.png
+  - ./images/graphqlplayground.PNG
 ---
 
 import { Link } from "gatsby"
@@ -37,6 +38,15 @@ There's not much else to say but the fact that personal sites are awesome! I thi
 employers are tired of reading resume after resume- besides, I get to build something and
 learn more about web technologies. It's a win win if you ask me, it just takes time to learn.
 
+On the topic of building something- I really value building personal projects (if you couldn't tell
+by the dramatic quote I put on my [projects page](https://rmaa.dev/projects)). Almost all my webdev
+knowledge, and almost all of my other knowledge has come from self-learning. School (at least in my
+experience) can only take you so far- I'll rant more about this in a later post.
+
+So yeah, I could've used a template, I could've forked some Github project and just changed a few lines
+and called it a day. My site wouldn't look nearly as bad. But that wouldn't have been fun, and coding
+should be fun! &#128521;
+
 I've seen some really stunning personal sites [(this one for example)](https://montychoy.com/)
 and quite honestly, I kind of went down the rabbit hole of web design again. Some
 people really know how to make websites! I mean, just look
@@ -44,7 +54,10 @@ at [this one](https://youtu.be/BZqzhmlTkAc?t=200).
 
 Of course, I'm not on that level. Heck, I'm happy if my media queries even work and my site looks
 ok on mobile. Also, I'm not just making this site for recruiters. To me, it will act as a diary of
-sorts. Whenever I feel like sharing something to my (non)existent audience. Or to just write up
+sorts. I think it'd be really cool to document the projects I work on over the years, or the thoughts
+I have in my blog, and then be able to look back and see it all once I'm an older developer. Who knows.
+
+It's nice to be able to post somewhere whenever I feel like sharing something to my (non)existent audience. Or to just write up
 a nice blog post of something I learned. All because I don't want to pay $5 a month for Medium &#128540;
 
 <div className="nice-text">
@@ -79,9 +92,8 @@ So then, how did I build this mediocre site you ask? Well I used this wonderful 
 **Webpack**, and **GraphQL**.
 
 <div className="captioned-image">
-  <GatsbyImage
-    image={getImage(props.embeddedImages[2])}
-    alt="the great gatsby"
+  <img
+    src="https://cdn-media-1.freecodecamp.org/images/1*Qz1vQPsgbVratlVCUUQNTg.png"
     className="inline-img"
   />
   <p>Gatsby is built on React, Webpack and GraphQL</p>
@@ -142,7 +154,7 @@ through this project!
 
       Learned some common widths and heights.
       For example, iPhone 6 screen is only 375 x 667 viewport width even though the resolution
-      is around twice that). For reference, desktop is 1920 x 1080! So almost 6x smaller on a phone,
+      is around twice that. For reference, desktop is 1920 x 1080! So almost 6x smaller on a phone,
       you need to account for that when making any site!
 
       How to use "min-width", "max-width", and the likes. Learned what should be changed in
@@ -154,8 +166,86 @@ through this project!
 
 2.  **GraphQL** is super cool
 
-    It's so organized! No wonder [Ben Awad](https://www.youtube.com/channel/UC-8QAzbLcRglXeN_MY9blyw)
-    is in love with it...
+    So this was kind of the big new thing I learned from doing this project. I've heard of
+    GraphQL many times in the past but have always been too afraid to touch it. Until I realized
+    how simple it is to use, and how nice it makes everything.
+
+    - Below is an image
+      of the graphQL playground, an awesome GUI that comes built into Gatsby where you can query
+      all kinds of data coming into your site. For example, I can query the blog posts on my site,
+      the data coming in from a CMS, and all the different images on the filesystem of this site!
+      Then I can choose which one I want and display it.
+
+      <div className="captioned-image">
+        <GatsbyImage
+          image={getImage(props.embeddedImages[3])}
+          alt="the great gatsby"
+          fadeIn
+          className="inline-img"
+        />
+        <p>The GraphQL playground!</p>
+      </div>
+
+    - Syntax for graphql reminds me of javascript objects. In fact, they're basically the same.
+      In a javascript object you would have something like
+
+    ```js
+    const stuff = {
+      i: "don't",
+      yes: false,
+      3: 2,
+      important: {
+        ans: "the answer",
+      },
+      // so on
+    }
+    ```
+
+    - And say you wanted to query the value of "ans" in graphQL you can just do
+
+    ```js
+    const query = graphql`
+      {
+        stuff {
+          important {
+            ans
+          }
+        }
+      }
+    `
+    ```
+
+    - Here's another example of a query. This one is being used in this site right now
+      to load up all the projects in the [projects page](https://rmaa.dev/projects), coming in from the CMS:
+
+    ```js
+    const query = graphql`
+      {
+        allContentfulProject(sort: { fields: projectName }) {
+          nodes {
+            projectImage {
+              gatsbyImageData(layout: CONSTRAINED, placeholder: TRACED_SVG)
+            }
+            projectName
+            link
+            id
+            shortDescription
+            content {
+              tags
+            }
+          }
+        }
+      }
+    `
+    ```
+
+    - To break it down, I get all the projects, and then we want to grab the name, link, descriptions
+      and tags! And then as you can see on the projects page, I display the results of this entire
+      query onto the site just by use dot notation.
+
+    - In summary, graphQL is super powerful and I am glad I learned it. It really isn't too
+      complex but the possibilities are endless. It kinda bridges the gap between frontend and
+      backend (where all the assets and data are) and makes development a lot more tolerable in that sense.
 
 3.  **CSS Transitions and Animations** are an easy way to improve a site
 
@@ -226,6 +316,9 @@ through this project!
 
 If you've gotten this far, thanks for reading! I'm excited to add more content in the future
 and fill this website up with awesome stuff, both non-tech and tech related.
+
+Special shoutout to John Smilga and his awesome [Gatsby course](https://www.udemy.com/course/gatsby-tutorial-and-projects-course/)!
+He's a great teacher and I learned a lot from the course.
 
 </div>
 

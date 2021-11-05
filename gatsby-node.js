@@ -1,4 +1,4 @@
-const path = require('path')
+const path = require("path")
 
 // this is how we make pages programatically for the /blog section of our site
 
@@ -6,19 +6,19 @@ const path = require('path')
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
   const result = await graphql(`
-  {
-    allMdx(filter: {frontmatter: {isMdxPost: {eq: true}}}) {
-      nodes {
-        frontmatter {
-          slug
+    {
+      allMdx(filter: { frontmatter: { isMdxPost: { eq: true } } }) {
+        nodes {
+          frontmatter {
+            slug
+          }
         }
       }
-    }
-    categories: allMdx {
+      categories: allMdx {
         distinct(field: frontmatter___category)
+      }
     }
-  }
-`)
+  `)
   // we pass down the slug variable from frontmatter through "pageContext", so that in the post page
   // we can access all the relevant data
   result.data.allMdx.nodes.forEach(({ frontmatter: { slug } }) => {
@@ -40,4 +40,17 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     })
   })
+}
+
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions
+
+  createTypes(`
+    type Mdx implements Node {
+      frontmatter: MdxFrontmatter!
+    }
+    type MdxFrontmatter {
+      image: File @fileByRelativePath
+    }
+  `)
 }
