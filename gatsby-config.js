@@ -17,6 +17,22 @@ module.exports = {
     author: "Richard Ma",
   },
   plugins: [
+    //google analytics
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        // You can add multiple tracking ids and a pageview event will be fired for all of them.
+        trackingIds: [
+          process.env.GANALYTICS, // Google Analytics / GA
+        ],
+        // This object is used for configuration specific to this plugin
+        pluginConfig: {
+          // Puts tracking script in the head instead of the body
+          head: true,
+          anonymize_ip: true,
+        },
+      },
+    },
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
@@ -39,6 +55,7 @@ module.exports = {
         path: `${__dirname}/src/posts`,
       },
     },
+    //fonts
     {
       resolve: `gatsby-plugin-webfonts`,
       options: {

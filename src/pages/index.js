@@ -35,7 +35,7 @@ export default function Home() {
               src="../assets/img/meee.jpg"
               alt="a person"
               className="home-img" // applied this class to wrapper
-              placeholder="tracedSVG"
+              placeholder="dominantColor"
             ></StaticImage>
             <div class="extra-links">
               <div class="resume extra-links-item btn-text">
