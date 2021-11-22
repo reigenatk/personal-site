@@ -9,31 +9,45 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="nav-center">
         <div className="nav-header">
-         <Link to="/" className="my-name">
+          <Link to="/" className="my-name">
             <p>Richard&nbsp;Ma</p>
-          </Link> 
-          <button className="nav-btn btn" onClick={() => {
+          </Link>
+          <button
+            className="nav-btn btn"
+            onClick={() => {
               setShow(!show)
-          }}>
+            }}
+          >
             <FiAlignJustify></FiAlignJustify>
           </button>
         </div>
         <div className={show ? "nav-links show-links" : "nav-links"}>
           {/* activeClassName assigns the class when on that specific link's page */}
-          <Link to="/" className="nav-link" activeClassName="active-link" onClick={() => {
+          <Link
+            to="/"
+            className="nav-link"
+            activeClassName="active-link"
+            onClick={() => {
               setShow(false)
-            }}>
+            }}
+          >
             <p>Home</p>
           </Link>
-          <Link to="/about" className="nav-link" activeClassName="active-link" onClick={() => {
+          <Link
+            to="/hobbies"
+            className="nav-link"
+            activeClassName="active-link"
+            onClick={() => {
               setShow(false)
-            }}>
-            <p>About</p>
+            }}
+          >
+            <p>Hobbies</p>
           </Link>
           <Link
             to="/projects"
             className="nav-link"
-            activeClassName="active-link" onClick={() => {
+            activeClassName="active-link"
+            onClick={() => {
               setShow(false)
             }}
           >
@@ -42,16 +56,21 @@ const Navbar = () => {
           <Link
             to="/experience"
             className="nav-link"
-            activeClassName="active-link" onClick={() => {
+            activeClassName="active-link"
+            onClick={() => {
               setShow(false)
             }}
           >
             <p>Experience</p>
           </Link>
           <div className="blog-link">
-            <Link to="/blog" className="btn" onClick={() => {
-              setShow(false)
-            }}>
+            <Link
+              to="/blog"
+              className="btn"
+              onClick={() => {
+                setShow(false)
+              }}
+            >
               Blog
             </Link>
           </div>

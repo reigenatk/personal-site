@@ -1,0 +1,374 @@
+---
+title: The Flash Boys and High Frequency Traders
+slug: flash-boys
+image: ./images/flashboys.jpg
+date: 2021-11-20
+category: Book
+readTime: 30
+postDescription: A really interesting look on what goes on inside markets!
+isMdxPost: true
+---
+
+<section className="mdx-page">
+
+<div className="post-content">
+
+# Intro
+
+**Hey guys!** &#128515;
+
+Hope you're doing well, whenever you read this.
+
+I'm planning to start a new kind of post where I review media that I especially enjoyed! This could be things
+like books, movies, or even music!
+
+I want to start this off with an especially good book called **Flash Boys- A Wall Street Revolt**, written
+by **Michael Lewis** (Who also wrote the famous book which inspired the movie, **The Big Short**). Let's get into it!
+
+# Synopsis
+
+Are you an investor? Perhaps you buy a stock and hold it for a nice profit. Everyone
+has heard of the saying: **Buy high, sell low.**
+
+<div className="ci">
+  <iframe
+    src="https://giphy.com/embed/zt6XoZ4r6nHVJO5cnM"
+    frameBorder="0"
+    class="giphy-embed"
+  ></iframe>
+  <p>Investing- it's simple, really</p>
+</div>
+
+**So then, what if I told you right now that the market is rigged?**
+
+"Well Richard", you'd probably say, "obviously it's rigged! It's no secret that billionares are assholes!"
+Plus, everyone knows Wall Street is corrupt, right?
+
+Sure, but **could you explain to me how?** Tougher question, right?
+
+Well, without the Flash Boys, we might've never known. They were a bunch of normal dudes: a Japanese Canadian
+dude named Brad Katsuyama, a Korean Canadian dude named Rob Park, their Irish telecom buddy named Ronan Ryan,
+and a smart dude named Allen (Zhang). And a few others that joined in the story.
+
+<div className="ci">
+  <img src="https://s.yimg.com/hz/en_us/Finance/US_AFTP_SILICONALLEY_H_LIVE/The_heroes_of_Flash_Boys-e68ba6ff99ae534b8894e82d059f1f22" />
+  <p>The Flash Boys</p>
+</div>
+
+# Exposition
+
+It's 2007. Our protaganist, Brad, was a successful trader from RBC,
+the royal bank of Canada. Due to his success, he was fatefully assigned to go to downtown New York to invest in American markets.
+
+Being your average nice Canadian, Brad sure was surprised by the way of Wall Street- here,
+there was no such thing as being too mean.
+
+Brad worked as **a medium between the big investor and the public markets.**
+Whenever someone wanted to buy or sell a large block of stock, Brad would work with them to get that
+amount through the smaller volumes of stock going through the public market, at the best possible prices. Then he would receive a commision.
+
+Anyways, Brad quickly gets accustomed and starts trading- except, ~~he's bleeding money.~~ And he doesn't know why.
+
+<div className="ci">
+  <img src="https://g.foolcdn.com/editorial/images/626343/market-crash-share-prices-fall-1.jpg" />
+  <p></p>
+</div>
+
+Every time he makes a trade, Brad noticed the _market seems to move against him_.
+
+An example from the book was when
+Brad had a customer who wanted to sell 5 million shares of a company named Solectron. This customer wanted
+to sell at around _$3.65 a share._
+
+But the customer doesn't want to assume a risk of unloading the shares- so he takes the 5 million shares from the customer
+and wants to sell 5 million of them off.
+So he starts off by selling 100,000 shares on his terminal.
+
+Then, something strange happened- the market sells at a value just a little bit less than $3.65 a share (say $3.645), even though his terminal says the price is $3.65.
+It's such a small difference, that if you were a retail investor selling only a few shares, you wouldn't even notice.
+
+Now he'd lose $0.005 per share, but remember, he's doing this for _5 million shares!_ Assuming this small loss per share, ~~he would
+lose $25,000~~ by the end of selling all his shares off! It's almost as if the stock market terminal was lying to him about the prices!
+
+There's a similar example with buy orders- say he wanted to buy 5 million at $3.65, then he noticed it would execute at $3.651 instead- making him pay
+an extra $25,000! Brad was so confused that he called over the tech specialists because he thought his terminal was broken, but they didn't seem to know
+what was wrong.
+
+What Brad didn't know, was that there was someone in the market, waiting for his sell order, and profiting off of him! ~~There was a predator in the market~~,
+profiting off of thousands of innocent brokers like him!
+
+When Brad asked his broker colleagues- they all voiced the same concerns as him, but no one knew what was happening!
+One of the funds said they lost up to _30 million a year_ from their overall management of 2 billion!
+
+Here's a really nice video explaining the situation, by Brad himself:
+
+<div className="ci">
+  <iframe
+    src="https://www.youtube.com/embed/0eqqCwhPlyU"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+  ></iframe>
+  <p>Brad on High frequency trading</p>
+</div>
+
+# The Predator
+
+The culprit? **High frequency traders**. ooooo, big fancy word. Let me try to break down what was happening in that situation.
+
+<div className="ci">
+  <img src="https://www.economist.com/img/b/1280/720/90/sites/default/files/images/2021/02/articles/main/20210206_fnp506.jpg" />
+  <p>High frequency trading...</p>
+</div>
+
+Basically the instant you press buy on your terminal, the order is sent to an exchange- there are many exchanges,
+_NYSE and NASDAQ_ are probably the most famous, but there are many others. And often times,
+the exchanges can have the same stock for sale, each with their different number of shares available at any given moment.
+
+Another thing you need to understand is _routing_- when you place an order, say a buy order on **stock X**,
+the prices of that stock **won't be all exactly the same on every exchange**. It might be higher on NYSE than
+on Chicago, _by say a few cents_. So the router will automatically first go to Chicago, buy off those shares at the lower price.
+Then it will go to New York's exchange, and depending on how many more shares you need (if any at all),
+it will buy those shares. And it goes on and on like this, until all your shares are filled. The key idea here
+is that the _path of the router is predictable_
+
+<div className="ci">
+  <img src="https://www.gomarkets.com/wp-content/uploads/2018/07/Exc-chart-1-1024x923.png" />
+  <p>There are many exchanges...</p>
+</div>
+
+High frequency traders _continually ping buy/sell orders for certain stocks on the market_, for example,
+"Buy 100 shares of AAPL to NYSE".
+
+Now they don't actually want the stock, what they want is **information**. The instant someone big like
+Brad comes along with a buy order, it gets split up via the router. Say he wants to sell 100,000 shares, as per
+our previous example. The router might be destined to go to NASDAQ and sell 10,000 at $3.65, since that's the best price available
+across all markets at that instant.
+
+Now since high frequency traders are continually pinging the exchanges, they see this order coming in. And their
+algorithms will then race ahead to NASDAQ, and just ~~for a few milliseconds~~, they will sell
+off the stock to buyers that want _any prices lower than $3.65_. Then, again in the matter of milliseconds, they will put it up for sale at _$3.649_
+
+Then the router will come along, and sell it at that decreased price- sometimes only a few subpennies ($0.001), and
+continue onto the next exchange- whose price has been (you guessed it) also duped by the high frequency traders to be a few micropennies higher.
+This continues on until the order is filled.
+
+So what ends up happening is- the high frequency trader has gained money- he initially had 10,000 dollars
+of share X, which he sold for $3.65 and bought again for $3.649, **making 10 dollars amd still having 10,000 of share X**.
+You however, sold 10,000 at $3.65 expecting $36500, but you only got $36490, ~~losing 10 dollars!~~
+
+Put in one sentence, **high frequency traders make money by digesting publicly available stock information faster than others.**
+
+# Nice Analogy
+
+Here's another nice analogy I read that I really liked- its a bit long so you can skip if you want but
+I think it's really well written and easier to understand than my example.
+
+<div className="ci">
+  <iframe
+    id="reddit-embed"
+    src="https://www.redditmedia.com/r/explainlikeimfive/comments/21yhcq/eli5_high_frequency_trading_hft_what_it_is_and/cghsjf2/?depth=1&amp;showmore=false&amp;embed=true&amp;showmedia=false"
+    sandbox="allow-scripts allow-same-origin allow-popups"
+    style="border: none; --darkreader-inline-border-top: initial; --darkreader-inline-border-right: initial; --darkreader-inline-border-bottom: initial; --darkreader-inline-border-left: initial;"
+    data-darkreader-inline-border-top=""
+    data-darkreader-inline-border-right=""
+    data-darkreader-inline-border-bottom=""
+    data-darkreader-inline-border-left=""
+    height="1390"
+    width="640"
+    scrolling="no"
+  ></iframe>
+</div>
+
+# Why does this work?
+
+Now you might ask- hold on, aren't they seeing the same market as us? How are they able to beat the
+router to change the price by an ever so small amount?
+
+This comes down to a simple answer- _hardware_. High frequency traders put special fibre lines
+between exchanges for faster communications. **The millisecond is the name of the game.** If you can help
+a high frequency trading company like Citadel shave off a millisecond from their latency, you would probably
+be paid ~~millions of dollars a year~~ and hailed a hero. That's how important it is to them.
+
+The stock prices listed on our screens- be it TD Ameritrade, Robinhood, or Google, have been seen
+by high frequency traders already, _a second or so ago_. But a second is _an eternity_ in the trading world,
+enough time for an order to get from Chicago to New York **75 times!** (13.3 ms latency is what they have from Chicago to NY)
+
+How do they get such fast connections?
+
+1. They create specialized fibre lines.
+
+I encourage you to read about
+[Spread Networks](https://en.wikipedia.org/wiki/Spread_Networks), a company that built a 300 million dollar specialized line from Chicago to New York,
+drilling through the notoriously rough _Allegheny Mountains_ just to shave off a few milliseconds. This line
+supported 200 customers and each contract was $12.6 million dollars for 5 years, or $300,000 a month.
+Companies like **Goldman Sachs, Citadel, and DRW** are a few examples of their customers. Speed is everything in HFT.
+
+(And yes, I did say Goldman Sachs- see, banks also participated heavily in HFT activities. Even though
+the people they were targeting were often their own customers!)
+
+<div className="ci">
+  <img src="https://www.five9dg.com/wp-content/uploads/2018/12/IMAGE-13.png" />
+  <p>
+    A picture of the 300 million dollar line. Notice that its very straight.
+  </p>
+</div>
+
+2. They put their data centers right next to the exchanges for minimal latency.
+
+Why do you think all of the HFT firms are located in Chicago or New York? By setting up shop next
+to the exchanges, they can glean off the market data faster than the official market counter itself,
+called the SIP (Securities information processor), which is **slow and maintained using old technology**.
+This is the market that retail traders see. But the firms see a totally different version, one that is _milliseconds ahead of ours_!
+Of course, to place their stuff next to the exchanges, _they have to pay a hefty fine to the exchange_. But that fine is nothing compared
+to the amount they make from high frequency trading! And as in the example from reddit- both the exchange
+and the HFT firm profits ~~from you~~, the unsuspecting customer. So **they have mutual interest**.
+
+<div className="ci">
+  <img src="https://miro.medium.com/max/624/0*YvMkQge8LgTncdOx.png" />
+  <p> Location of their Datacenters is key</p>
+</div>
+
+3. They optimize their connections
+
+Anything goes- faster switch is available? Change it. What kind of fibre are you using? What kind of software? It got to the point
+that HFT companies would cover their data centers inside the exchanges with wrap, hoping to _hide_ the newest hardware
+so that other companies couldn't glean off their ideas. After all, HFT companies aren't competing with you, _they're competing with each other_.
+
+# Back to the story
+
+Brad and his team were the first ones to figure out what was going on. Ronan had actually helped these HFT firms
+with their connections, but had no clue why they cared about speed so much. Brad and Rob had the financial knowledge, but no
+idea that speed was so important. _Together they connected the dots and saw the whole picture._
+
+Allen was the programmer, and he made a program called [THOR](<https://en.wikipedia.org/wiki/THOR_(trading_platform)>).
+What this program did, was it made it so that an order would arrive at the exchanges at almost _exactly the same time_, by using built in delays.
+By doing this, high frequency traders couldn't rush over to other exchanges and mess with the prices by buying shares or selling them.
+
+THOR proved extremely effective against HFTs, and Brad's team started to make money again. To spread awareness of
+the situation, Brad and Ronan **went around Wall Street**, telling big funds and managers their story. They were so successful
+that RBC, the bank they worked for, went from #17 in the "Most influential voice on Wall Street" to #1 _in just a year_.
+
+The team also learned that dark pools weren't safe from high frequency trading activity either. If you aren't
+aware, a **dark pool** is essentially a private space for trading securities. _Funds_ mostly use it to
+trade ~~large quantities of shares~~ without exposure to the public, since without this it might cause _large public price devaluation_
+(think if someone suddenly sold a ton of a stock, how would the price react?)
+
+<div className="ci">
+  <iframe
+    src="https://www.youtube.com/embed/hq9waP7goSc"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+  ></iframe>
+  <p>Dark pools</p>
+</div>
+
+In fact, dark pools
+owned by wall street banks actually sold access to high frequency trading firms for a certain fee.
+This was worrysome because dark pools were full of ~~juicy prey~~- pension funds, hedge funds, and mutual funds.. trying to make
+a large order.
+
+<div className="ci">
+  <img src="https://www.finra.org/sites/default/files/wp-content/uploads/2015/03/FINRA-dark-pool-1440x670.jpg" />
+  <p>Dark pools were not safe</p>
+</div>
+
+# IEX
+
+What did Brad and his team do? They started their own exchange! Called the **Investors Exchange** or better known as
+_IEX_, founded in 2012, this exchange focuses on one thing only: _transparency_. Having been a past target
+of high frequency traders, the Flash Boys designed this exchange with one goal in mind: **Fair trading**.
+They didn't ban anyone from trading on their exchange- they just made it really hard for HFTs to exploit anyone.
+
+For example- one tactic they implemented was an idea of coiled fibre wire- since fibre signals travels
+much quicker in a straight line, coiled wire would essentially slow down the signal. Taken from a quote:
+"A 38-mile coil of optical fiber placed in front of its trading engine. This _350 microsecond delay_ adds a round-trip delay of 0.0007 seconds
+and is designed to **negate the certain speed advantages utilized by some high-frequency traders**"
+
+<div className="ci">
+  <iframe
+    width="560"
+    height="315"
+    src="https://www.youtube.com/embed/d8BcCLLX4N4"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+  ></iframe>
+  <p>A nice video explaining IEX's 350ms delay, and how it helps counter HFT</p>
+</div>
+
+They had a lot of other interesting changes- for example, nobody is allowed to locate their equipment adjacent
+to IEX's servers. Traders cannot beat IEX's computers, which makes predatory tactics like _slow-market arbitrage_ (going to other markets and buying off shares)
+essentially impossible. The team put a lot of effort into thinking of ways the exchange could be exploited, and then
+countering those ways in their design.
+
+Today, IEX trades roughly _2.5% of market share_, with roughly _300 million shares daily_. For comparison,
+NASDAQ trades 5 billion shares at 23.5% of the market daily. **Every day, they're creating fairer
+markets that give us retail traders a fair say.** Quite the success story if you ask me!
+
+<div className="question">
+  Today, if you wanted to trade on IEX, you can! For example on TDAmeritrade,
+  simply enable Direct Routing in your options and then for exchange, choose
+  IEX! Below is a picture of me doing it to my account.
+</div>
+
+<div className="ci">
+  <img src="https://i.ibb.co/5KX65LT/iex.png" alt="iex" border="0" />
+  <p> Simply turn routing option from Smart (default) to IEX!</p>
+</div>
+
+# Takeaways
+
+Now I know what you might think. _High frequency trading should be illegal!_ And I first thought that too.
+However there are convincing arguments that go either way.
+
+1. They lower the bid ask spread.
+
+The _bid ask spread_ is the difference between the highest price the buyer will pay and the lowest price the seller will sell.
+Think of it as a compromise. _"I'm only willing to pay this much"_ vs. _"I'm only willing to sell for this low"_
+A large bid ask spread can sometimes be a problem, since then orders won't get through. With HFTs pumping thousands of orders per millisecond,
+there's always going to be lots of orders, and that will naturally lower the bid ask spread, allowing for the retail
+trader _to get a better price._
+
+2. Liquidity
+
+_Liquidity_ is a measure of how quickly an asset can be bought/sold, and also its effect on the price. For example,
+currency is the most liquid asset in the world, with a microscopic bid ask spread. And liquidity is a desirable thing,
+since it means accessability. Say you had a security worth $100,000, but nobody wants to buy it!
+That would be an **iliquid asset**, and you probably wouldn't be too happy you owned it, since it might as well could be worth _1 dollar_ if no one would buy it. Without liquidity, the markets wouldn't
+be the same. High frequency traders provide liquidity through their **sheer volume**, again helping the little guy out.
+
+_Of course there are many negative arguments as well_, a few being that they are ~~literally stealing money~~ by
+taking advantage of faster connections, or that they don't take any risk since they only hold their positions for milliseconds.
+I mean, there's a reason why these guys are so rich. There was an interesting [reddit AMA](https://www.reddit.com/r/IAmA/comments/ky0az/iama_former_high_frequency_programmertrader_who/) of an HFT who
+said he quit because he just felt morally wrong about his job. Hell, you'll find more than one. People know very well what they're engaged in doing.
+
+But it isn't simply black and white, and I think it's really interesting to hear both sides of the
+argument.
+
+# More resources
+
+<div className="ci">
+  <iframe
+    src="https://www.youtube.com/embed/SLNySV4OQfk"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+  ></iframe>
+  <p>Another interesting talk with Brad</p>
+</div>
+
+# Outro
+
+_Thanks for reading this long article!_ Hopefully you learned something new- I sure did. I never knew
+about all of this and it was certainly fun researching all of it! If any of this interests you,
+be sure to pick up a copy of **Flash Boys**! Till next time. &#128515;
+
+</div>
+
+</section>

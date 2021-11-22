@@ -3,8 +3,8 @@ title: My First Blog Post
 slug: my-first-blog-post
 image: ./images/happyseal.jpg
 date: 2021-10-29
-category: Miscellanious
-readTime: 15
+category: Rant
+readTime: 20
 postDescription: Musings on the creation of my site!
 isMdxPost: true
 embeddedImages:
@@ -34,28 +34,28 @@ what challenges I faced, things I learned, etc.
 
 # Motivation
 
-There's not much else to say but the fact that personal sites are awesome! I think lots of
+There's not much else to say but the fact that **personal sites are awesome!** I think lots of
 employers are tired of reading resume after resume- besides, I get to build something and
 learn more about web technologies. It's a win win if you ask me, it just takes time to learn.
 
-On the topic of building something- I really value building personal projects (if you couldn't tell
+On the topic of building something- **I really value building personal projects** (if you couldn't tell
 by the dramatic quote I put on my [projects page](https://rmaa.dev/projects)). Almost all my webdev
-knowledge, and almost all of my other knowledge has come from self-learning. School (at least in my
-experience) can only take you so far- I'll rant more about this in a later post.
+knowledge, has come from looking stuff up online. I'll rant more about this in a [later post](https://rmaa.dev/posts/productivity).
 
-So yeah, I could've used a template, I could've forked some Github project and just changed a few lines
-and called it a day. My site wouldn't look nearly as bad. But that wouldn't have been fun, and coding
+So yeah, **I could've used a template**, I could've forked some Github project and just changed a few lines
+and called it a day. I was actually considering using Jekyll, a Ruby based framework.
+I could've used wordpress. My site wouldn't look nearly as bad. But that wouldn't have been fun, and coding
 should be fun! &#128521;
 
-I've seen some really stunning personal sites [(this one for example)](https://montychoy.com/)
-and quite honestly, I kind of went down the rabbit hole of web design again. Some
-people really know how to make websites! I mean, just look
-at [this one](https://youtu.be/BZqzhmlTkAc?t=200).
+Through trying to make this site, I obviously drew some inspiration on how other people made their sites.
+And I realized that some people really know how to make websites! I mean, just look
+at [this one](https://youtu.be/BZqzhmlTkAc?t=200). Can you even call that a personal site anymore
+&#128531;
 
 Of course, I'm not on that level. Heck, I'm happy if my media queries even work and my site looks
 ok on mobile. Also, I'm not just making this site for recruiters. To me, it will act as a diary of
 sorts. I think it'd be really cool to document the projects I work on over the years, or the thoughts
-I have in my blog, and then be able to look back and see it all once I'm an older developer. Who knows.
+I have in my blog, and then be able to **look back** and see it all once I'm an older developer. Who knows.
 
 It's nice to be able to post somewhere whenever I feel like sharing something to my (non)existent audience. Or to just write up
 a nice blog post of something I learned. All because I don't want to pay $5 a month for Medium &#128540;
@@ -76,7 +76,7 @@ Personal Sites are Awesome. Okay not gonna lie I just wanted to show off this co
 
 So then, how did I build this mediocre site you ask? Well I used this wonderful framework called **Gatsby**.
 
-<div className="captioned-image">
+<div className="ci">
   <iframe
     src="https://giphy.com/embed/u4CY9BW4umAfu"
     width="480"
@@ -91,7 +91,7 @@ So then, how did I build this mediocre site you ask? Well I used this wonderful 
 **GatsbyJS** is a powerful static site generation framework, which runs on top of three things: **React**,
 **Webpack**, and **GraphQL**.
 
-<div className="captioned-image">
+<div className="ci">
   <img
     src="https://cdn-media-1.freecodecamp.org/images/1*Qz1vQPsgbVratlVCUUQNTg.png"
     className="inline-img"
@@ -102,13 +102,13 @@ So then, how did I build this mediocre site you ask? Well I used this wonderful 
 Now I shouldn't really mention **Webpack**, because as a user of Gatsby I never
 even interfaced with it. From what I understand, Webpack takes your code and breaks it down into modules,
 which allows for easier management, debugging and testing. So it's more of a behind the scenes
-tool that the average noob like me will never encounter. Maybe I will meet you in the future, Webpack.
+tool that I'll perhaps encounter someday.
 
 **ReactJS** is a staple in the modern webdev world nowadays. I took a course on it about a year ago,
 and honestly enjoyed it a lot. There's something about writing javascript as opposed to the
 traditional HTML/CSS that makes you feel more sophisticated. But it also is a lot more powerful
-in the sense that you can create components and re-use them everywhere. And with hooks, props,
-and just javascript in general being a very flexible language, you can create essentially anything
+in the sense that you can create components and re-use them everywhere. And with hooks, props, async/await,
+state, and just javascript in general being a very flexible language, you can create essentially anything
 you want.
 
 As for **GraphQL**, this was an eye opener for me while making this project. Traditionally when making
@@ -118,7 +118,7 @@ to manage my project page! Essentially, a CMS abstracts everything about the cod
 so you can just focus on the content you are writing. The instant you are done, simply press publish,
 and it will appear as a new page on your site like magic!
 
-<div className="captioned-image">
+<div className="ci">
   <GatsbyImage
     image={getImage(props.embeddedImages[1])}
     alt="the great gatsby"
@@ -176,7 +176,7 @@ through this project!
       the data coming in from a CMS, and all the different images on the filesystem of this site!
       Then I can choose which one I want and display it.
 
-      <div className="captioned-image">
+      <div className="ci">
         <GatsbyImage
           image={getImage(props.embeddedImages[3])}
           alt="the great gatsby"
@@ -279,7 +279,39 @@ through this project!
 6.  **Styled Components** are super useful because you don't have to worry about colliding class names
 
     Also heard a lot about Styled Components in the past, tried them for the first time.
-    They are pretty easy to use and make. 10/10
+    They are pretty easy to use and make.
+
+```js
+import React from "react"
+import styled from "styled-components"
+
+const blah = () => {
+  return (
+    <Wrapper>
+      <div className="category">hi</div>
+      <h1>bye</div>
+    </Wrapper>
+  )
+}
+
+const Wrapper = styled.div`
+  .category {
+    font-size: 4rem;
+  }
+
+  h1 {
+    color: red;
+  }
+
+`
+
+export default blah
+```
+
+So in this example- if we had a class in our CSS files called 'category', well, we don't need to worry
+about naming it something different in our styled components because it sits insde of the
+component and will be **renamed to something entirely different** once it does its magic! Classnames
+stay local to that component + its children so its a lot easier to manage.
 
 7.  **SASS** is the best invention ever and should honestly be in default CSS
 
@@ -307,8 +339,7 @@ through this project!
 10. **Commentbox** for comments!
 
     What's a blog without a commenting system? This was pretty easy to integrate, just
-    a quick search and a few commands. Look forward to interacting with people (if anyone
-    even comments lol)
+    a quick search and a few commands. Look forward to interacting with people :)
 
     <hr />
 

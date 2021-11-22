@@ -15,7 +15,7 @@ export default function Home() {
             <h2>Hi! I'm Richard.</h2>
             <p>
               And this is my personal site! I've always wanted to have a place
-              where I can write down everything about myself, not just for
+              where I can jot down everything about myself, not just for
               employers and friends, but also for myself. So I'm excited to have
               made this!
             </p>
@@ -34,9 +34,12 @@ export default function Home() {
             <StaticImage
               src="../assets/img/meee.jpg"
               alt="a person"
-              className="home-img" // applied this class to wrapper
-              placeholder="tracedSVG"
+              className="home-img recipe" // applied this class to wrapper
+              placeholder="dominantColor"
             ></StaticImage>
+            <p className="better-pictures">
+              I need better pictures of myself &#128566;
+            </p>
             <div class="extra-links">
               <div class="resume extra-links-item btn-text">
                 <a

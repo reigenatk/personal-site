@@ -1,18 +1,17 @@
-import React from 'react'
-import styled from 'styled-components'
-import Categories from '../Categories'
-import Dash from './Dash'
+import React from "react"
+import styled from "styled-components"
+import Categories from "../Categories"
+import Dash from "./Dash"
 
 const BannerCategories = () => {
   return (
     <Wrapper>
-    <Dash value="Categories" />
-    <Categories />
+      <Dash value="Categories" />
+      <Categories />
     </Wrapper>
   )
 }
 const Wrapper = styled.div`
-
   .categories {
     list-style-type: none;
     display: flex;
@@ -27,10 +26,11 @@ const Wrapper = styled.div`
     transition: all 0.3s ease-in;
     border-radius: 5%;
     text-decoration: none;
-    background: #6FB98F;
-    
+    background: #6fb98f;
+    margin: auto 0.5rem;
+
     &:hover {
-      background: #A2C523;
+      background: #a2c523;
     }
   }
 `
