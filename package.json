@@ -24,10 +24,7 @@
     "gatsby-cli": "^4.0.0",
     "gatsby-plugin-gitalk": "^1.2.2",
     "gatsby-plugin-google-analytics": "^4.1.0",
-<<<<<<< HEAD
-=======
     "gatsby-plugin-google-gtag": "^4.1.0",
->>>>>>> e6fd0e39592d4e57fcc01235ce5fef221f9f259a
     "gatsby-plugin-image": "^1.14.1",
     "gatsby-plugin-mdx": "^2.14.0",
     "gatsby-plugin-react-helmet": "^5.0.0",
