@@ -34,7 +34,11 @@ export default function Home() {
             <StaticImage
               src="../assets/img/meee.jpg"
               alt="a person"
+<<<<<<< HEAD
               className="home-img recipe" // applied this class to wrapper
+=======
+              className="home-img" // applied this class to wrapper
+>>>>>>> e6fd0e39592d4e57fcc01235ce5fef221f9f259a
               placeholder="dominantColor"
             ></StaticImage>
             <p className="better-pictures">
