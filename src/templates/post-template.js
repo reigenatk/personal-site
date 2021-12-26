@@ -1,12 +1,19 @@
 import React, { useEffect } from "react"
 import Layout from "../components/Layout"
 // import Hero from '../components/Hero'
+
 import styled from "styled-components"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+
 // import Banner from '../components/Banner'
 import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import commentBox from "commentbox.io"
+import Prism from "prism-react-renderer/prism";
+
+(typeof global !== "undefined" ? global : window).Prism = Prism;
+
+require("prismjs/components/prism-php");
 
 const PostTemplate = ({ data }) => {
   useEffect(() => {

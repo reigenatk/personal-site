@@ -34,7 +34,7 @@ export default function Home() {
             <StaticImage
               src="../assets/img/meee.jpg"
               alt="a person"
-              className="home-img" // applied this class to wrapper
+              className="home-img about-img" // applied this class to wrapper
               placeholder="dominantColor"
             ></StaticImage>
             <p className="better-pictures">
@@ -42,11 +42,7 @@ export default function Home() {
             </p>
             <div class="extra-links">
               <div class="resume extra-links-item btn-text">
-                <a
-                  class="u-remove-underline"
-                  href="img/Richard_Ma_Resume.pdf"
-                  download
-                >
+                <a class="u-remove-underline" href="https://docdro.id/7OxWgWg">
                   <div className="resume-div">
                     {/* <img id="resume_pic" src="resume-image.jpg" /> */}
                     <h5 class="resume-text">Resume</h5>

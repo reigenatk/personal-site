@@ -72,7 +72,7 @@
   & del {
     font-weight: 800;
     text-decoration: none;
-    color: #e3242b;
+    color: #eb60e6;
   }
 }
 
@@ -184,6 +184,32 @@ hr {
 
 .left p {
   color: white;
+}
+
+// light blue
+.lb {
+  color:#41EAD4;
+}
+
+// light green
+.lg {
+  color:#4aea41;
+}
+
+.lp {
+  color: #f232e2
+}
+
+.lo {
+  color: #f2c617
+}
+
+.lr {
+  color: #f86c6c;
+}
+
+.center_text {
+  text-align: center;
 }
 
 @media screen and (max-width: 479px) {

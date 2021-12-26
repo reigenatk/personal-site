@@ -19,6 +19,7 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     }
   `)
+  
   // we pass down the slug variable from frontmatter through "pageContext", so that in the post page
   // we can access all the relevant data
   result.data.allMdx.nodes.forEach(({ frontmatter: { slug } }) => {

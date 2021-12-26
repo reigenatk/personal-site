@@ -215,8 +215,10 @@ through this project!
     `
     ```
 
-    - Here's another example of a query. This one is being used in this site right now
-      to load up all the projects in the [projects page](https://rmaa.dev/projects), coming in from the CMS:
+    - Here's another example of a query. To make it interesting, let's look at some source code from my 
+    website!
+    To load up all the projects in the [projects page](https://rmaa.dev/projects), I first make a **query** to the 
+    CMS...
 
     ```js
     const query = graphql`
@@ -239,13 +241,58 @@ through this project!
     `
     ```
 
-    - To break it down, I get all the projects, and then we want to grab the name, link, descriptions
-      and tags! And then as you can see on the projects page, I display the results of this entire
-      query onto the site just by use dot notation.
+    - To break it down, I get all the projects from the property called *allContentfulProject* which 
+    is the name of the graphql collection. I sort it by the name alphabetically.
+
+    - I access the *nodes* property which is kind of like the content I suppose. Then I grab
+    the **image**, the **projectName**, the **link**, the **shortDescription**, etc.
+
+    - Now the data will all come in as a props called "data". So I can simply dereference it to what I want:
+
+    ```js
+      const Projects = () => {
+        const data = useStaticQuery(query)
+        const projectdata = data.allContentfulProject.nodes // destructure it a bit
+        projects.map(project => {
+          const {
+            projectImage,
+            link,
+            projectName,
+            shortDescription,
+            id,
+            content,
+          } = project
+      });
+      // more code here... Standard react functional component with return render function
+      return (
+        <Link to={`/${sluggedTitle}`} className={`recipe ${color_rand}`} key={id}>
+        <GatsbyImage
+          image={pathToImage}
+          className="recipe-img"
+          alt={projectName}
+        />
+        <h5>{projectName}</h5>
+        <p>{shortDescription}</p>
+        <div class="project-tags">
+        {
+            tags.map((tag, index) => {
+                return <div class={"project-tag"}><p class={tags_selected.includes(tag) ? "tag-selected" : ""}key={index}>{tag}</p></div>
+            })
+        }
+        </div>
+        </Link>
+        )
+      }
+    ```
+
+    So this looks a bit confusing but all that's being done is, we're looping through every project 
+    and then **accessing every property that we fetched for earlier**. So now we can simply just 
+    use them when rendering different HTML elements. For example, when rendering the h5 element I just 
+    put "{projectName}" which came from **the graphql query**
 
     - In summary, graphQL is super powerful and I am glad I learned it. It really isn't too
       complex but the possibilities are endless. It kinda bridges the gap between frontend and
-      backend (where all the assets and data are) and makes development a lot more tolerable in that sense.
+      backend (where all the assets and data are) and makes for a much nicer development experience.
 
 3.  **CSS Transitions and Animations** are an easy way to improve a site
 
@@ -315,12 +362,87 @@ stay local to that component + its children so its a lot easier to manage.
 
 7.  **SASS** is the best invention ever and should honestly be in default CSS
 
-    First off, thank god I can comment with "//" instead of "/\* \*/", that saves so much time.
-    Also, SASS variables are awesome, and allow for even more customizability. Nested CSS is just
-    so much more intuitive. And the ability to split everything into its own file,
-    makes everything easy to organize. Sass is just better CSS and I have only positives about it.
+    First off, thank god I can comment:
+    
+    ```scss
+    // like this 
+    .class {
+      border-radius: 5px;
+    }
+    ```
 
-8.  Component based design!
+    instead of 
+
+    ```css
+    /* like this */
+    .class {
+      border-radius: 5px;
+    }
+    ```
+    
+    Also, SASS variables are awesome, and allow for even more customizability. Just have a file 
+    called "variables.scss" and then put all your colors in it like this:
+
+    ```scss
+      $color-white: #fff;
+      $color-red: #da2323;
+    ```
+
+    then whenevery you want to use a color just do 
+
+    ```scss
+      .class {
+        color: $color-white;
+      }
+    ```
+
+    I know this is in vanilla CSS as well though, so this isn't SASS specific.
+
+    
+    100% the best part about SASS is the nested CSS features. Say you want to style 
+    a bunch of stuff in a div element.
+    
+    ```html
+      <div class="outer">
+          <p>Hi</p>
+          <h1>Yo</h1>
+      </div>
+    ```
+
+    What looks nicer:
+    
+    ```scss
+      .outer {
+        & p {
+          //styling
+        }
+        & h1 {
+          //styling
+        }
+      }
+    ```
+
+    OR
+
+    ```css 
+    .outer p {
+      /*styling*/
+    }
+    .outer h1 {
+      /* styling */
+    }
+    ```
+
+    Like it's just no contest. Especially once your divs start getting bloated
+    with a lot of elements, it gets really 
+    confusing really fast. 
+    
+    Okay, I'm done raving about SASS/SCSS, but needless to say I will 
+    be using it from now on. It's just better CSS in my opinion.
+
+      
+
+8.  *Component based design*!
 
     If you are making something that will be reused, put it into a component. I had too many components
     to count in this project. Navbar, Footer are some obvious ones but there are more interesting
@@ -342,6 +464,17 @@ stay local to that component + its children so its a lot easier to manage.
     a quick search and a few commands. Look forward to interacting with people :)
 
     <hr />
+
+11. *Prism* for syntax highlighting! 
+
+    I'm bound to showcase a bunch of code I find interesting on this blog, so I gotta make it look nice!
+    I used the [prism-react-renderer](https://www.npmjs.com/package/prism-react-renderer) package to do this.
+    But some of the languages I want are **not supported** in this version so you may have to install 
+    the main prism package as well using 
+
+    ```npm
+      npm install prismjs
+    ```
 
 # Anyways...
 

@@ -48,15 +48,15 @@ const Layout = ({ children }) => {
         />
         <link rel="manifest" href="/site.webmanifest" />
 
-        <link
-          rel="stylesheet"
-          href="https://unpkg.com/gitalk/dist/gitalk.css"
-        />
-        <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+        <link href="../../assets/css/prism.css" rel="stylesheet" /> 
+        <link rel="preconnect" href="https://fonts.googleapis.com"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin></link>
+        <link href="https://fonts.googleapis.com/css2?family=Mukta&family=Readex+Pro&display=swap" rel="stylesheet"></link>
       </Helmet>
       <Navbar></Navbar>
       {children}
       <Footer></Footer>
+      <script src="../../utils/prism.js"></script> 
     </>
   )
 }
