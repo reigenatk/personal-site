@@ -52,6 +52,7 @@ const Layout = ({ children }) => {
         <link rel="preconnect" href="https://fonts.googleapis.com"/>
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin></link>
         <link href="https://fonts.googleapis.com/css2?family=Mukta&family=Readex+Pro&display=swap" rel="stylesheet"></link>
+        <link href="https://fonts.googleapis.com/css2?family=Luxurious+Roman&display=swap" rel="stylesheet"></link>
       </Helmet>
       <Navbar></Navbar>
       {children}

@@ -1,0 +1,41 @@
+# NAT
+
+# Firewalls
+
+For example, here's a list of some of the IP's that are messing with my firewall...
+
+<div className="ci">
+  <img src="https://i.imgur.com/Uq7ZEnM.png" />
+  <p>Almost one packet coming in every 10 seconds or so... &#128544;</p>
+</div>
+
+Here, the _destination IP_ represents the IP of the person sending me the packets...
+The third column is the destination IP, which would be MY IP address. But seeing as I'm already being spammed
+I feel like leaking that isn't the best idea.
+
+<div className="ci">
+  <img src="https://i.imgur.com/o1vkHrS.png" />
+  <p>Some extra info</p>
+</div>
+
+The last two columns are the protocol (TCP or UDP) and the reason it was blocked, most of them
+say _'Generic Discards'_ but some say _DOS attack_ or _Invalid Packet_... Strange.
+
+If you look up some of these IPs, you get some really interesting results...
+
+For example, I got a packet from 162.142.125.88, and when you look it up it writes down the name
+of the packet...
+
+<div className="ci">
+  <img src="https://i.imgur.com/tXaPEMW.png" />
+  <p>hmmm</p>
+</div>
+
+You can see they are based somewhere in kansas. Now let's look up the name they have put down...
+
+And boom, we find this nice website explaining that they are scanning the entire internet!
+
+<div className="ci">
+  <img src="https://i.imgur.com/2Um6Va6.png" />
+  <p>A public scanning project... cool!</p>
+</div>

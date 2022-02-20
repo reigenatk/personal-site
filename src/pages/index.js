@@ -68,7 +68,7 @@ export default function Home() {
               <div class="extra-links-item btn-text">
                 <a
                   class="u-remove-underline quick-links"
-                  href="https://codeforces.com/profile/richardma2002"
+                  href="https://codeforces.com/profile/rmaa"
                 >
                   <img class="quick-links-pic" src="codeforces.PNG" />
                 </a>

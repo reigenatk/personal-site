@@ -1,0 +1,555 @@
+---
+title: Networking (And other schenanigans)
+slug: networking-deep-dive
+image: ./images/underseacable.jpg
+date: 2022-02-19
+category: Tech
+readTime: 20
+postDescription: All about the internet!
+isMdxPost: true
+---
+
+<section className="mdx-page">
+
+<div className="post-content">
+
+# Intro
+
+Hello! Long time no post. No, I am not dead. I've just been really lazy. And quite frankly, typing blog posts is
+hard which is why **I've started messing with youtube videos**.
+
+<div className="ci">
+  <img src="https://cdn.frankerfacez.com/emoticon/557676/4" />
+  <p>Pause Champ?</p>
+</div>
+
+You heard me right, I am starting my youtube career. Typing is tiring, talking is just so much
+more efficient. Read on to see which video I made 😈 (or don't, here's the <a href="https://youtu.be/DIaYQfR8Qkg">link</a>
+if you don't wanna read my blog post.)
+
+Anyways, about life, <span className="lo">Christmas break went by really fast</span>. Then the first month of school. Then the second. Honestly, IDK where the time
+went. It's not like I was being super productive either, time just goes really fast when you're dumb like me and don't know what
+to do with your life, I guess. Truth be told, I've been in a bit of a slump, productivity wise. Maybe I'm depressed. Or maybe
+I'm just making excuses for being lazy. Not sure.
+
+<div className="ci">
+  <img src="https://media.makeameme.org/created/where-did-all-5a5d08.jpg" />
+  <p>AAAAAAAAAAAAAAAAAAAAAAAAAAA</p>
+</div>
+
+Now it's Febuary and I just remembered
+that I have a blog that no one reads. And I haven't posted in a while. So here I am, writing this post.
+
+I made the rather rash decision to spend my christmas break learning all about _Computer Networking!_ The main motivation
+was because I am interested in Cybersecurity, but it's hard to understand Cybersecurity without first having a solid basis
+in networking. <span className="lb">Literally everyone</span> will tell you that you should "obtain a solid foundation in networking" before aspiring to
+do anything security related. Otherwise you will be that script kiddie asking on online forums how to hack 127.0.0.1
+
+<div className="ci">
+  <img src="https://i.kym-cdn.com/photos/images/original/000/901/991/d06.jpg" />
+  <p>LOIC = Low Orbin Ion Cannon, a DDoS tool and a script kiddie favorite</p>
+</div>
+
+I always ignored this advice because I was arrogant and thought: _"pshhhhhhhh, how much is there to know? I mean hell, I know
+what an IP address is. Isn't that enough?"_ <span className="lg">I can assure you that I couldn't have been more wrong.</span> There are probably millions of lines of
+code, dozens of algorithms created by smart people, multiple organizations and standards, and
+a hell of an effort spanning many decades, that helps that help your computer send just a <span className="lr">singular packet</span> to some server online.
+
+Another motivation for me was actually my Citadel interview, earlier on during this recruiting season.
+
+During my third interview, the guy interviewing me asked me to describe what happens from the moment you type in
+"www.google.com" in your web browser, to when you get a fully loaded webpage. I remember giving an answer that briefly covered HTTP/HTTPS, and a bit
+of DNS. But I sure as hell couldn't give him the details.
+
+He asked me if I knew what TCP/UDP was, to which I said something along the lines of "Oh yeah, I heard of that before".
+He probably realized then and there that <span className="lr">I
+only knew the basics</span>, and didn't ask me about more important concepts like packet fragmentation, and the OSI model. Probably
+because he didn't want to embarass me.
+
+<div className="ci">
+  <img src="https://i.imgur.com/KpmUiT6.jpg" />
+  <p>ok this meme sucks lol</p>
+</div>
+
+Looking back at the interview now, I wish I could redo that answer. Not because I want to get into Citadel (tbh screw citadel,
+read my <a href="https://rmaa.dev/posts/flash-boys">HFT post here</a> for reasons why), but
+because I wanna actually answer that question properly.
+
+Back when I was interviewing, I thought I had done a <span className="lg">great job answering the question.</span>
+Now looking back, I realized I touched on barely half of the
+entire answer, and the guy interviewing me probably realized <span className="lr">I had no real networking knowledge!</span>
+
+Just for fun, <span className="lb">I'll list a bunch of terms</span> I encountered that I never knew before starting this study.
+~~See how many you know!~~ I'll tell you, **I thought I knew many of these well**, especially in the easy category, but when I really
+saw the bigger picture and read more about them, I was shocked to find out how _surface level_ my understanding actually was. And
+sorry if this seems kinda flex. I don't claim to understand all of these perfectly.
+
+# Easy Mode
+
+The essentials, and things you've probably heard of.
+
+<ol>
+  <li>IP address</li>
+  <li>Ethernet, MAC address</li>
+  <li>Security: Firewalls, port numbers, </li>
+  <li>Reserved IP ranges- Class A/B/C/D/E. Special addresses (loopback)</li>
+  <li>
+    OSI Model (Layers 1-7), can you name them? What is an example of each layer?
+  </li>
+  <li>TCP/IP Model (Layers 1-4)</li>
+  <li>IPv4 vs IPv6 and IPv4 exhaustion. How is IPv6 different?</li>
+  <li>
+    Hardware: Routers, Switches, Hubs, WAPs, NIC. What are the differences
+    between each device?
+  </li>
+  <li>LANs, WANs, and typical topologies</li>
+</ol>
+
+# Medium
+
+This stuff I had heard of in the past either from studying Cybersecurity
+or just from random readings, but didn't really understand until I <span className="lb">dug a little deeper.</span>
+
+<ol>
+  <li>
+    TCP/UDP, what's the difference between the two? Describe the three way
+    handshake.
+  </li>
+  <li>QUIC, ICMP, what do each of these do? What is a Layer 3 protocol?</li>
+  <li>
+    Common services + associated port numbers (what port are HTTP, HTTPS, DNS,
+    FTP, etc. on?) What is a ephemeral port number? Reserved port number?
+  </li>
+  <li>ARP and why it is necessary. ARP tables.</li>
+  <li>
+    Subnetting- why do we do it? What is a /24 network? A /16? Can you tell me
+    how many devices are on each network, and what the subnet/broadcast masks
+    are?
+  </li>
+  <li>
+    Broadcast, Multicast, Unicast + how they differ from each other when
+    travelling through a network. Why is an IP ending in .255 important?
+  </li>
+  <li>
+    The Default Gateway, what is it? Port forwarding, DMZs, router configuration
+    using web interface.
+  </li>
+  <li>
+    DNS- FQDNs, subdomains, root nameservers, certificates/certificate
+    authorities. DNS caching. A, CNAME, AAA records.
+  </li>
+  <li>
+    DHCP servers and NAT. Public vs private IP. What is special about IP
+    addresses starting in 192.168? Can you tell me your public + private IP, and
+    what the difference is between them?
+  </li>
+  <li>VPNs and encryption (how do VPNs work?)</li>
+  <li>ASNs- what is an ASN?</li>
+  <li>
+    Copper vs Optic cabling, ethernet standards (what is 100BaseT? 1000BaseT?)
+  </li>
+  <li>
+    WiFi standards (a,b,g,ac,n), 2.5 vs 5GHz band and the benefits/drawbacks of
+    both, channels, channel width, SSID, WEP, WPA
+  </li>
+  <li>
+    Wireshark (802.11 and IP packet sniffing). Can you explain to me the
+    structure of a packet in wireshark, and how this relates to packet
+    encapsulation (and the OSI model)?
+  </li>
+  <li>
+    Basic troubleshooting commands (arp -a, netstat -bano, ipconfig /all, etc.)
+  </li>
+</ol>
+
+# Hard
+
+I mainly put <span className="lb">routing related topics</span> here that I never heard of prior to studying the book, but as I said are important for the
+fluid operation of networks worldwide. I learned a bit of routing after finishing the book.
+
+<ol>
+  <li>What is Routing? Routing tables and protocols. What is an interface?</li>
+  <li>
+    Interior Gateway Protocols: OSPF, IS-IS, EIGRP, RIP. When to use each of
+    them? How do they work?
+  </li>
+  <li>Exterior Gateway Protocols: BGP</li>
+  <li>Static vs Dynamic Routing</li>
+  <li>VLANs</li>
+  <li>Spanning Tree Protocol- and why we need it</li>
+  <li>Packet Tracer + GNS3. Can you make a simple LAN in an emulator?</li>
+  <li>Cisco IOS. How to configure a new router? What is an interface?</li>
+  <li>How to run basic WiFi attacks using monitor mode adapters</li>
+</ol>
+
+Okay, I'm done bragging. And trust me, I'm not just including vague terminology to seem smart. That's just how many
+technologies are responsible for making the internet work properly! I know for
+a fact that <span className="lg">my appreciation of the internet is now so much more than what it used to be.</span>
+Hell, before this I literally thought that
+my ISP was the internet. I also couldn't tell you how WiFi worked, to me it was just _magic travelling through the air_
+and getting me to my <a href="https://ankev28.github.io/">favorite website.</a>
+
+# More Ranting
+
+I feel like the people who work in
+IT and on the internet infrastructure, are in some ways heroes. **And they don't get any praise for it**.
+Most of us just hop online without giving a damn about the technology that enables us to watch streams,
+read news, share our thoughts on social media... etc, so freely.
+
+And I mean, **that's understandable**. Not everyone is interested in technology. But for me, an _aspiring tech
+nerd_, who's gonna try to code for a living- I think it's important, if not ~~mandatory~~ that I understand
+how the internet works. After all, without the internet, there would be no Google, no Facebook,
+no Doordash, no Apple, no Twitter, no Youtube, no Netflix, no Paypal, no P\*rnhub, no Chegg, no
+Uber, no Snapchat... ok I'll stop listing big tech companies &#128534; you get what I'm trying to say. **The internet enables
+absolutely everything** and I mean everything.
+
+A prime example of this is entertainment- any of you remember Redboxes? No, just me?
+
+They were these red boxes (literally) filled with movies that were placed outside stores like Walgreens for example.
+You would put in some money and it would dispense a physical DVD to you with a specific movie. Then you would
+return it later once you were done.
+
+<div className="ci">
+  <img src="https://static01.nyt.com/images/2016/07/26/business/26APOLLO/26APOLLO-articleLarge.jpg?quality=75&auto=webp&disable=upscale" />
+  <p>I always wanted to use one of these!</p>
+</div>
+
+But then Amazon + Netflix came along, killing these cute red boxes along with its older brother Blockbuster.
+Hell, blockbuster is so dead now that the google page for it uses "was" instead of "is".
+
+<div className="ci">
+  <img src="https://i.imgur.com/JiofBkG.png" />
+  <p>I'm sure some kids today don't even know what blockbuster is</p>
+</div>
+
+# Clout Comparison
+
+I mean, cmon- everyone's heard of Steve Jobs... Bill Gates... But have you even heard of <span className="lb">Vint Cerf?</span>
+Exactly.
+
+<div className="ci">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Dr_Vint_Cerf_ForMemRS.jpg" />
+  <p>Do you know this man?</p>
+</div>
+
+He's called the _father of the internet_, and for good reason- he invented TCP/IP, which is the protocol _that the internet depends on to even work._
+I'm just saying... he deserves just as much clout as the former two, and yet he only has 32.9K
+Twitter followers... That's like less than a small twitch streamer.
+
+<div className="ci">
+  <img src="https://i.imgur.com/eMHyM3k.png" />
+  <p>
+    Nobody knows who or what this guy (and his fellow researchers) have done for
+    society! &#128531;
+  </p>
+</div>
+
+Ok, I'll stop. My point is, the internet is an _engineering feat_, equivalent in my books to something like the moon
+landing. <span className="lg">I'm being serious!</span> How is it possible for me to send a packet, that
+goes through my home network, through a series of routers, across the Pacific Ocean, and then to Russia, on the other side of the
+planet, <span className="lr">two times faster than the blink of my eye?</span> (Average eye blink is 400ms, the ping to this random server
+in moscow is only 150ms)
+
+<div className="ci">
+  <img src="https://i.imgur.com/zrl8Epa.png" />
+  <p>Just think about how amazing this is for a second!</p>
+</div>
+
+How have these engineers managed to create a protocol to
+serve the <span className="lr bt">4.66 billion</span> people online, roughly <span className="bt">_60% of the global population_</span>, who send a whopping
+_2.5 quintillion bytes of data_ (that's 2500000000 GB) each day?
+
+That's what I set out to try and learn a bit better, and I hope I can explain it a bit for you as well.
+
+# Learning
+
+I read a book to learn this information. The book itself was <span className="lp"><a href="https://www.amazon.com/CompTIA-Network-Certification-Seventh-N10-007/dp/1260122387">Mike Meyers' All-In-One Network+ Study Guide.</a></span>
+And if you are wondering, yes I highly recommend it. It's the most popular book (at least from waht I could tell
+from discussions on the internet) for aspiring network techs and I can verify that it is very good.
+
+It goes at a great pace, fast enough that I was always learning something new, and it is written is such a way that
+you could probably get ~~your grandparents~~ up to speed on TCP/IP in no time. In other words, no previous knowledge assumed.
+But of course, tons of other resources work as well.
+
+Now this book is for an exam called the **Network+**, which is an entry level certification for IT helpdesk
+positions. At first I read the book with the intention of taking the exam, that is, until I realized
+that it was ~~348 dollars...~~ Eeek!
+
+<div className="ci">
+  <img src="https://i.imgur.com/fpZwySs.png" />
+  <p>Yikes!</p>
+</div>
+
+So I decided to just gain the knowledge instead by reading the book and writing this blog post to
+substitute as a summary of all I have learned. After all, I don't really see myself going into the IT
+industry- at least not for now.
+
+Oh also, Before I get started, **let me change the font...**
+
+<div className="new_font_2">
+
+# Boom
+
+There, is that better? This one is called _Mukta_.
+
+Now I can't possibly go over everything I learned, to give you an idea, the notes I took while reading the
+book was <span className="lb">a Google Doc that's nearly 100 pages</span>.
+
+<div className="ci">
+  <img src="https://i.imgur.com/s27wczu.png" />
+  <p>How to get carpal tunnel</p>
+</div>
+
+<div className="question">
+  I like to take notes when I learn things,{" "}
+  <span className="lo">
+    mainly so I can reference things when I wanna go back to them later.
+  </span>{" "}
+  Especially in something as technical as networking where you have a billion
+  terms and its nice to have pictures and annotations to understand what a topic
+  was (for example, if I wanna know wtf a DHCP server is, I can just read what I
+  wrote when learning it).
+</div>
+
+There's no way in hell I can cover all the stuff I've learned. So I will outline the more interesting things that I think
+people should know about: Switch vs. Router vs. WAP, NAT (network address translation), and Firewalls.
+
+Then I will link a nice video I made about Wireless Hacking, if you're interested 😉
+
+# Devices!
+
+So to begin understanding the internet, let's talk about devices. There's really only three devices you need to know of. **Switches, Routers, WAP**.
+Unfortunately, today they are all bundled into one big old thing that everyone calls "the router", but its important to understand
+how each of these devices differ from one another <span className="lg">in terms of what they do.</span>
+
+A _Switch_ works on _Layer 2_ of the OSI model (Link Layer), connecting devices to a single centralized hub. If you've ever setup
+ethernet, you would know you take an ethernet cable, put it into your PC and then take the other end and put it into a switch
+(or often times, the wall, which will then run a connection to the switch). It looks a little something like this:
+
+<div className="ci">
+  <img src="https://www.lifewire.com/thmb/AerrC-xLaDghM3wJi12zbJUzoVU=/1416x400/filters:no_upscale():max_bytes(150000):strip_icc()/ubiquity-48-port-switch-d1544208be7c4845b49b75974241a2fa.jpg" />
+  <p>Each of the holes is called a port.</p>
+</div>
+
+A _Router_ works on _Layer 3_ device (Network Layer), working with TCP/IP which is where IP addresses live. It does
+not connect to client PCs. Instead, <span className="lg">its main job is to forward traffic.</span>
+
+A _WAP (WIFi Access Point)_ is like a switch, but for WIFi. That's the best way to describe it.
+It simply gathers all WiFi signals into one place and sends that data to the router. Since WIFi doesn't use physical cabling like ethernet does,
+you don't have any ports on a WAP. Instead, you have antennas which will read + send signals to and from PCs
+in your home network. WAPs also have another important jobs- since WiFi is essentially radio, it needs to transform that signal into
+a packet that is ready to be shipped by the router.
+
+Here's a picture of a Router that is doubling as WAP. In other words, it is capable of both receiving all WiFI traffic in a
+LAN, as well as sending that traffic to some place.
+
+<div className="ci">
+  <img src="https://www.lifewire.com/thmb/W46xwzwd9HlLUwqpjYpQOxqc3Ck=/1500x1000/filters:fill(auto,1)/71qNsDlUZL._SL1500_-db9624bf30494933b4d2279b89ea19ef.jpg" />
+  <p>The famous Linksys router line</p>
+</div>
+
+Often times, <span className="lr">these devices are condensed into one!</span>
+Your home router probably acts as a switch, a router, and a WAP all at once. But in larger corporate settings, it's really important to
+separate these (you might have one switch per floor in a building for instance, then a series of routers to connect to the internet).
+
+Switches and routers are often put into big black racks that look like this:
+
+<div className="ci">
+  <img src="https://i.pinimg.com/originals/94/87/14/948714771d435db5a8a908af89ba3607.jpg" />
+  <p>These are called network racks.</p>
+</div>
+
+# LANs and WANs
+
+OK Blah Blah Blah, Why did I just tell you all that? Well now we have all the necessary components to form a simple _Local Area Network_ (LAN)
+
+<div className="ci">
+  <img src="https://i.stack.imgur.com/cTdvm.jpg" />
+  <p>
+    Typical LAN consists of clients (PCs), switch to connect them all, a router,
+    and a connection to the public internet.
+  </p>
+</div>
+
+Note how the Switch connects to the PCs, NOT the router. Other things like servers will connect to a switch as well, such as
+in this example Mail + File Servers. These connect using physical Ethernet cables, typically the iconic RJ45 cable:
+
+<div className="ci">
+  <img src="https://m.media-amazon.com/images/I/81QerFqLubL._AC_SY450_.jpg" />
+  <p>These color of these are really easy to remember.</p>
+</div>
+
+Looking at that LAN diagram again, note how the router does NOT connect to the PCs, it connects to the switch. This is because the router is on Layer 3,
+and Ethernet is a layer 2 protocol, so that realm is for the switches. Routers only talk with switches, which have aggregated all the traffic
+on a local area network into one central area.
+
+Moving on, note that **the router** is the one that connects with a big cloud labelled _"the internet"_. This is typically <span className="lg">a reference to another router in your ISP's network</span>.
+The line that connects your home router with an ISP router (which assumedly
+lives on their premises somewhere physically) is typically an underground cable.
+
+If you trace the physical cable connection coming from your home router, it will probably go out of the
+wall and ~~somewhere into the ground~~ (unless you are using satellite, which is rare). ISPs are responsible for
+laying a line that safely connects a client (us) to their physical network (probably somewhere a few miles away). Wiring is either a <span className="lb">copper or fiber
+optic line</span>, the latter of which is typically much faster and is starting to be offered by ISPs nationwide.
+
+ISPs then form a network of routers. One of the routers in the ISP network will receieve your packet,
+and then smartly route it <span className="lg">as quickly as possible</span> to your desired destination.
+
+How does it know what route is best? Using a <span className="lb">routing protocol of course!</span> ISPs typically run one call IS-IS. It might also use
+the BGP protocol if your request is travelling far.
+
+<div className="ci">
+  <img src="https://routebig.com/wp-content/uploads/2020/11/What-is-Routing-1024x512.jpeg" />
+  <p>The internet is nothing more than a series of networks!</p>
+</div>
+
+So to summarize, an ISP is nothing more than a bunch of routers connected together! ISPs are responsible for maintaining a physical
+connection to your house, as well as making sure they have connectivity to other ISPs. Together, ISPs form a Wide Area Network, <span className="lr">which is just many local area networks
+(like your home network) that are interconnected via routers.</span> In other words, the internet is just a ton of LANs connected together via <span className="lg">millions of routers,</span> owned by
+ISPs and many different organizations!
+
+<div className="ci">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Internet_Connectivity_Distribution_%26_Core.svg/440px-Internet_Connectivity_Distribution_%26_Core.svg.png" />
+  <p>
+    ISPs come in tiers, and organize themselves in specific ways to ensure
+    optimal connectivity
+  </p>
+</div>
+
+In other words, when you go to "google.com", you are really sending a packet that gets routed through tons of ISP routers, and to
+the Google LAN, where there is a web server listening. Yes, your packet _physically travells there_ and back. Amazing! In fact,
+you can even see which routers specifically using a command.
+
+Go to a **command prompt**, and type in the command _tracert google.com_, or whatever website you want. You can see
+each router hop it takes, the IP of that router, and how long it took for that specific route. Isn't that cool?
+
+<div className="ci">
+  <img src="https://i.imgur.com/4SgTMYv.png" />
+  <p>Each hop it took for a request to pornhub!</p>
+</div>
+
+Let's actually dive a bit deeper- I highlighted three names here. <span className="lr">Pavlov Media, Cogentco, and Reflected.Net.</span> I can
+tell you that _Pavlov Media is the name of my ISP_. But what is Cogentco? Well if we look it up:
+
+<div className="ci">
+  <img src="https://i.imgur.com/aFhF33I.png" />
+  <p>Each hop it took for a request to pornhub!</p>
+</div>
+
+We see it is an ISP as well! And not just any ISP, but a <span className="lb">Tier 1 ISP</span>. Cool! So Pavlov seems to be sending
+my packet over to Cogentco's network of routers. Then Cogentco sends it to something called Reflected.net
+
+Let's lookup Reflected.Net:
+
+<div className="ci">
+  <img src="https://i.imgur.com/OmWxTOQ.png" />
+  <p>A Domain Hosting service!</p>
+</div>
+
+This is a _Web Hosting service_. Basically, they provide the servers, all you need to provide is the code for your site!
+So when someone makes a request to your site, it goes to their servers and you don't have to build a server yourself.
+Makes sense! So if you took away nothing, remember that Pornhub uses Reflected.Net hosting 😏
+
+# Physical connections
+
+Now you might ask- **how do ISPs connect to one another?** The answer, via physical cabling.
+
+This goes back to the title image of this blog post- an <span className="lr">underground fiberoptic cable</span>
+crossing the Atlantic Ocean, that connects internet traffic between the Eastern and Western
+Hemispheres.
+
+<div className="ci">
+  <img src="https://acacia-inc.com/wp-content/uploads/2020/01/Submarine-Cable-Networks.jpg" />
+  <p>An undersea internet cable! Looks like a snake.</p>
+</div>
+
+<div className="question">
+  Yes, our connectivity to Europe depends on a literal physical wire, somewhere
+  deep in the Atlantic Ocean. Isn't that absolutely crazy?
+</div>
+
+If you want to be
+amazed, check out <a className="lb" href="https://www.submarinecablemap.com/">this sweet map</a>
+with ALL the internet cables underwater, servicing every single packet that
+is sent across the ocean. **Did you know that 95% of internet traffic is sent through
+underwater sea cables?**
+
+<div className="ci">
+  <img src="https://i.imgur.com/d8vhGSV.png" />
+  <p>
+    These cables connect every single bit of traffic that goes cross-continent!
+  </p>
+</div>
+
+That's so awesome to me. We depend on the manufacturers of
+these cables so much more than we even know. How funny is it to think that **a shark** could literally bite a cable and reduce
+internet bandwith of millions, _if not billions of people worldwide_? Next time you lag in your video games,
+you can blame a shark (if you are accessing a server across the ocean, that is. Otherwise its a skill issue 😆)
+
+<div className="ci">
+  <img src="https://www.te.com/content/dam/te-com/images/energy/global/campaigns/underground/energy-underground-1064x400.jpg" />
+  <p>Underground network cabling! This is what connects you to your ISP</p>
+</div>
+
+So, in short:
+
+<div>
+  <ul>
+    <li>
+      <span className="bt lg">Switches, Routers, and Wifi Access Points</span>{" "}
+      make up the majority of LANs
+    </li>
+    <li>
+      <span className="bt lg">Switches connect all the PCs</span> in a network,{" "}
+      in contrast <span className="bt lg">Routers connect to switches</span> and
+      forward that traffic to other routers (typically your ISP's network of
+      routers, which goes to other ISPs, until it reaches your destination)
+    </li>
+    <li>
+      ISPs connect to you + other ISPs{" "}
+      <span className="bt lg">via underground cabling</span>, creating the Wide
+      Area Network known as "the internet"
+    </li>
+  </ul>
+</div>
+
+Alright, that's it for me for today. Next in this series, we will touch on NAT/DHCP and Firewalls.
+My hands are too tired for now to continue. Wait, I forgot the video:
+
+# Wifi Hacking 🙈
+
+OK one more thing- along with learning more about networks, I touched on WiFi a bit and decided to get a bit hands on by buying an adapter.
+
+The adapter is called the _Alfa AWUS036ACM_. Now you might ask, well Richard, why not just use your current adapter? Like the one on your
+motherboard?
+
+The thing is, most wifi adapters like the ones in our PC are in what's called "managed mode", which means that
+it can <span className="lr">only see packets that are destined for it</span> (from the WAP). This means its quite limited,
+since you can only see your own traffic, and that's not very useful when it comes to wifi hacking.
+
+This adapter is in "monitor mode", which means
+that it can see _ALL the wifi packets in the vicinity_, even ones that aren't designated for it.
+
+This as you can imagine, can lead to some nefarious activities.
+
+I made a <a href="https://youtu.be/DIaYQfR8Qkg">video</a> on how to setup one of these wifi cards for some basic wireshark sniffing (in Kali Linux).
+This adapter also supports **packet injection**, which is where you can create packets on the fly and send them out to nearby devices,
+for example pretending to be the wifi access point and stealing someone's password.
+
+It's quite technical but I'm glad I made it since
+I figured I might be able to help some people with it. Give it a view if you are at all interested!
+
+<div className="question">
+  Sidenote, making youtube videos with good audio and visuals is really hard 😢
+  I'm working on it but the mic quality is kinda bad at times 😅
+</div>
+
+# Outro
+
+As always, thanks for reading/watching!
+
+</div>
+
+</div>
+
+</section>
