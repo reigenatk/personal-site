@@ -4,7 +4,7 @@ slug: networking-deep-dive
 image: ./images/underseacable.jpg
 date: 2022-02-19
 category: Tech
-readTime: 20
+readTime: 45
 postDescription: All about the internet!
 isMdxPost: true
 ---
@@ -24,8 +24,7 @@ hard which is why **I've started messing with youtube videos**.
 </div>
 
 You heard me right, I am starting my youtube career. Typing is tiring, talking is just so much
-more efficient. Read on to see which video I made 😈 (or don't, here's the <a href="https://youtu.be/DIaYQfR8Qkg">link</a>
-if you don't wanna read my blog post.)
+more efficient. Read on to see which video I made 😈
 
 Anyways, about life, <span className="lo">Christmas break went by really fast</span>. Then the first month of school. Then the second. Honestly, IDK where the time
 went. It's not like I was being super productive either, time just goes really fast when you're dumb like me and don't know what
@@ -47,10 +46,10 @@ do anything security related. Otherwise you will be that script kiddie asking on
 
 <div className="ci">
   <img src="https://i.kym-cdn.com/photos/images/original/000/901/991/d06.jpg" />
-  <p>LOIC = Low Orbin Ion Cannon, a DDoS tool and a script kiddie favorite</p>
+  <p>LOIC = Low Orbit Ion Cannon, a DDoS tool and a script kiddie favorite</p>
 </div>
 
-I always ignored this advice because I was arrogant and thought: _"pshhhhhhhh, how much is there to know? I mean hell, I know
+I always ignored this advice because I was arrogant and thought: _"pshhhhhhhh, how much is there to know in networking? I mean hell, I know
 what an IP address is. Isn't that enough?"_ <span className="lg">I can assure you that I couldn't have been more wrong.</span> There are probably millions of lines of
 code, dozens of algorithms created by smart people, multiple organizations and standards, and
 a hell of an effort spanning many decades, that helps that help your computer send just a <span className="lr">singular packet</span> to some server online.
@@ -89,20 +88,37 @@ sorry if this seems kinda flex. I don't claim to understand all of these perfect
 The essentials, and things you've probably heard of.
 
 <ol>
-  <li>IP address</li>
-  <li>Ethernet, MAC address</li>
-  <li>Security: Firewalls, port numbers, </li>
-  <li>Reserved IP ranges- Class A/B/C/D/E. Special addresses (loopback)</li>
   <li>
-    OSI Model (Layers 1-7), can you name them? What is an example of each layer?
+    <span className="lg">IP address</span>
   </li>
-  <li>TCP/IP Model (Layers 1-4)</li>
-  <li>IPv4 vs IPv6 and IPv4 exhaustion. How is IPv6 different?</li>
   <li>
-    Hardware: Routers, Switches, Hubs, WAPs, NIC. What are the differences
-    between each device?
+    <span className="lb">Ethernet</span>, MAC address
   </li>
-  <li>LANs, WANs, and typical topologies</li>
+  <li>
+    <span className="lp">Port Security</span>: Firewalls, port numbers,{" "}
+  </li>
+  <li>
+    <span className="lo">Reserved IP ranges</span>- Class A/B/C/D/E. Special
+    addresses (loopback)
+  </li>
+  <li>
+    <span className="lb">OSI Model (Layers 1-7)</span>, can you name them? What
+    is an example of each layer?
+  </li>
+  <li>
+    <span className="lg">TCP/IP Model (Layers 1-4)</span>
+  </li>
+  <li>
+    <span className="lp">IPv4 vs IPv6 and IPv4 exhaustion</span>. How is IPv6
+    different?
+  </li>
+  <li>
+    <span className="lb">Hardware</span> Routers, Switches, Hubs, WAPs, NIC.
+    What are the differences between each device?
+  </li>
+  <li>
+    <span className="ly">LANs, WANs, and typical topologies</span>
+  </li>
 </ol>
 
 # Medium
@@ -112,53 +128,66 @@ or just from random readings, but didn't really understand until I <span classNa
 
 <ol>
   <li>
-    TCP/UDP, what's the difference between the two? Describe the three way
-    handshake.
+    <span className="lg">TCP/UDP</span>, what's the difference between the two?
+    Describe the three way handshake.
   </li>
-  <li>QUIC, ICMP, what do each of these do? What is a Layer 3 protocol?</li>
   <li>
-    Common services + associated port numbers (what port are HTTP, HTTPS, DNS,
-    FTP, etc. on?) What is a ephemeral port number? Reserved port number?
+    <span className="lo">QUIC, ICMP</span>, what do each of these do? What is a
+    Layer 3 protocol?
   </li>
-  <li>ARP and why it is necessary. ARP tables.</li>
+  <li>
+    <span className="lb">Common services + associated port numbers</span> (what
+    port are HTTP, HTTPS, DNS, FTP, etc. on?) What is a ephemeral port number?
+    Reserved port number?
+  </li>
+  <li>
+    <span className="lp">ARP</span> and why it is necessary. ARP tables.
+  </li>
   <li>
     Subnetting- why do we do it? What is a /24 network? A /16? Can you tell me
     how many devices are on each network, and what the subnet/broadcast masks
     are?
   </li>
   <li>
-    Broadcast, Multicast, Unicast + how they differ from each other when
-    travelling through a network. Why is an IP ending in .255 important?
+    <span className="lg">Broadcast, Multicast, Unicast</span> + how they differ
+    from each other when travelling through a network. Why is an IP ending in
+    .255 important?
   </li>
   <li>
-    The Default Gateway, what is it? Port forwarding, DMZs, router configuration
-    using web interface.
+    <span className="lb">The Default Gateway</span>, what is it? Port
+    forwarding, DMZs, QoS, router configuration using web interface.
   </li>
   <li>
-    DNS- FQDNs, subdomains, root nameservers, certificates/certificate
-    authorities. DNS caching. A, CNAME, AAA records.
+    <span className="lp">DNS</span>- FQDNs, subdomains, root nameservers,
+    certificates/certificate authorities. DNS caching. A, CNAME, AAA records.
   </li>
   <li>
-    DHCP servers and NAT. Public vs private IP. What is special about IP
-    addresses starting in 192.168? Can you tell me your public + private IP, and
-    what the difference is between them?
-  </li>
-  <li>VPNs and encryption (how do VPNs work?)</li>
-  <li>ASNs- what is an ASN?</li>
-  <li>
-    Copper vs Optic cabling, ethernet standards (what is 100BaseT? 1000BaseT?)
+    <span className="lg">DHCP servers and NAT.</span> Public vs private IP. What
+    is special about IP addresses starting in 192.168? Can you tell me your
+    public + private IP, and what the difference is between them?
   </li>
   <li>
-    WiFi standards (a,b,g,ac,n), 2.5 vs 5GHz band and the benefits/drawbacks of
-    both, channels, channel width, SSID, WEP, WPA
+    <span className="lb">VPNs and encryption</span> (how do VPNs work?)
   </li>
   <li>
-    Wireshark (802.11 and IP packet sniffing). Can you explain to me the
-    structure of a packet in wireshark, and how this relates to packet
-    encapsulation (and the OSI model)?
+    <span className="lp">ASNs</span>- what is an ASN?
   </li>
   <li>
-    Basic troubleshooting commands (arp -a, netstat -bano, ipconfig /all, etc.)
+    <span className="lb">Copper vs Optic cabling</span>, ethernet standards
+    (what is 100BaseT? 1000BaseT?)
+  </li>
+  <li>
+    <span className="lp">WiFi standards</span> (a,b,g,ac,n), 2.5 vs 5GHz band
+    and the benefits/drawbacks of both, channels, channel width, SSID, WEP, WPA
+  </li>
+  <li>
+    <span className="lo">Wireshark</span> (802.11 and IP packet sniffing). Can
+    you explain to me the structure of a packet in wireshark, and how this
+    relates to packet encapsulation (and the OSI model)?
+  </li>
+  <li>
+    <span className="lb">Basic troubleshooting commands</span> (arp -a, netstat
+    -bano, ipconfig /all, etc.)
   </li>
 </ol>
 
@@ -168,17 +197,32 @@ I mainly put <span className="lb">routing related topics</span> here that I neve
 fluid operation of networks worldwide. I learned a bit of routing after finishing the book.
 
 <ol>
-  <li>What is Routing? Routing tables and protocols. What is an interface?</li>
   <li>
-    Interior Gateway Protocols: OSPF, IS-IS, EIGRP, RIP. When to use each of
-    them? How do they work?
+    <span className="lg">What is Routing?</span> Routing tables and protocols.
+    What is an interface?
   </li>
-  <li>Exterior Gateway Protocols: BGP</li>
-  <li>Static vs Dynamic Routing</li>
+  <li>
+    <span className="lb">Interior Gateway Protocols:</span> OSPF, IS-IS, EIGRP,
+    RIP. When to use each of them? How do they work?
+  </li>
+  <li>
+    <span className="lo">Exterior Gateway Protocols: BGP</span>
+  </li>
+  <li>
+    <span className="lg">Static vs Dynamic</span> Routing
+  </li>
   <li>VLANs</li>
-  <li>Spanning Tree Protocol- and why we need it</li>
-  <li>Packet Tracer + GNS3. Can you make a simple LAN in an emulator?</li>
-  <li>Cisco IOS. How to configure a new router? What is an interface?</li>
+  <li>
+    <span className="lb">Spanning Tree Protocol-</span> and why we need it
+  </li>
+  <li>
+    <span className="lo">Packet Tracer + GNS3</span>. Can you make a simple LAN
+    in an emulator?
+  </li>
+  <li>
+    <span className="lg">Cisco IOS.</span> How to configure a new router? What
+    is an interface?
+  </li>
   <li>How to run basic WiFi attacks using monitor mode adapters</li>
 </ol>
 
@@ -188,6 +232,8 @@ a fact that <span className="lg">my appreciation of the internet is now so much 
 Hell, before this I literally thought that
 my ISP was the internet. I also couldn't tell you how WiFi worked, to me it was just _magic travelling through the air_
 and getting me to my <a href="https://ankev28.github.io/">favorite website.</a>
+
+Hopefully by the end of this article, you can check off NAT, ephemeral ports, LANs/WANs, and hardware!
 
 # More Ranting
 
@@ -312,7 +358,7 @@ book was <span className="lb">a Google Doc that's nearly 100 pages</span>.
 </div>
 
 There's no way in hell I can cover all the stuff I've learned. So I will outline the more interesting things that I think
-people should know about: Switch vs. Router vs. WAP, NAT (network address translation), and Firewalls.
+people should know about: Switch vs. Router vs. WAP, and NAT (network address translation).
 
 Then I will link a nice video I made about Wireless Hacking, if you're interested 😉
 
@@ -359,7 +405,7 @@ Switches and routers are often put into big black racks that look like this:
   <p>These are called network racks.</p>
 </div>
 
-# LANs and WANs
+# LANs and WANs- wtf is the internet actually?
 
 OK Blah Blah Blah, Why did I just tell you all that? Well now we have all the necessary components to form a simple _Local Area Network_ (LAN)
 
@@ -513,8 +559,203 @@ So, in short:
   </ul>
 </div>
 
-Alright, that's it for me for today. Next in this series, we will touch on NAT/DHCP and Firewalls.
-My hands are too tired for now to continue. Wait, I forgot the video:
+# NAT
+
+Whew! So hopefully now, you understand what the internet is made up of. Just a sea of routers, switches, servers and PCs, all
+intermangled across multiple ISPs and dictated by <span className="lg">smart routing algorithms.</span> 🥴
+
+The next topic is _NAT_ (Network Adress Translation) and **DHCP** (Dynamic Host Configuration Protocol). Two scary words, but they aren't so hard to
+understand. Trust me.
+
+The first concept you need to understand is IPv4 address exhaustion. IPv4 addresses are made of up _32 bits_, split into 4 groups of 8.
+For example, 192.168.10.24. So doing the math, this leaves 2^32 = 4294967296 or about <span className="lb">4 million IP addresses</span>. Think about that for a second.
+
+The population of the United States is 300 million. And we are quite the developed country, so assuming each person has 1 device,
+and each device has one IP address, this means that we are 4 - 300 = _296 million IP address short... What?This makes no sense!_
+
+That's exactly where NAT comes in- <span className="lg">there's no way every device in the planet can have its own IP address.</span> If that were so, we would've
+already ran out long ago. The designers of IPv4
+realized this fast. So they came up with this nifty idea.
+
+Remember how LANs look? Computers connect to switches, then switches connect to routers. Here's the solution: We gave every machine on
+an LAN its own unique IP address, called the <span className="lr">Private IP</span>. This way, we can differentiate
+
+And whenever that machine wants to send traffic onto the public internet, we give it a different IP called the <span className="lb">Public IP</span>,
+which is just **the IP address of the router**. Furthermore- Every machine on that LAN uses the router's IP when trying to go anywhere
+on the public internet.
+
+This is exactly the idea of NAT. And now, <span className="lp">more than one device can share a single IP address.</span> Let me say that again, because that's the key
+takeaway- _More than one device can use a single IP address!!!!_
+
+<div className="question">
+  Important distinction! Traffic on the LAN is NOT considered traffic on the
+  internet, and therefore doesn't use NAT! Because you are just going through
+  local switches but you never hit the router of your ISP! Say in the below
+  example, the first computer wants to send a packet to the second. It would
+  never have to go into the internet to do that! It'd just go through the switch
+  and out the other end.
+</div>
+
+<div className="ci">
+  <img src="https://s8185.pcdn.co/wp-content/uploads/2013/11/41.jpg" />
+  <p>
+    In this example, the public IP address is 67.210.97.1, and the private IPs
+    are 192.168.1.2, 192.168.1.3 and 192.168.1.4
+  </p>
+</div>
+
+Why do we go through all this trouble? Because of IPv4 exhaustion, of course. We are running out of IPv4 addresses, and fast! In fact,
+that's the whole reason why IPv6 was invented. Here's a graph of the number of IPv4 addresses left, by year:
+
+<div className="ci">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Ipv4-exhaust.svg/260px-Ipv4-exhaust.svg.png" />
+  <p>
+    We are running out fast! NAT helps solve the issue, but not by much. IANA is
+    the IP address authority people BTW
+  </p>
+</div>
+
+Finally, there's one more concept called the ~~NAT table.~~ You see, the router does more than tacks on its own IP instead of the private IP.
+It records an entry inside its NAT table, with _the IP of the machine that sent the packet_, and _on which port_ that packet came from for that machine.
+It also records down the destination port/IP. With these four pieces of information, it can now decipher all traffic to and from the network!
+
+If you're confused, <span className="lr">let's try some examples!</span> That's the best way to understand this concept.
+
+<hr />
+
+**0. What is the private and public IP of the topmost computer?**
+
+**Solution:** Private IP is 192.168.1.2, Public is 67.210.97.1 (Not 192.168.1.1, that is the router's IP on the local area network!
+The public IP is always the IP of the router on the internet! This is called an _interface_, the router has one on the LAN and one on the
+internet, each with different IPs)
+
+You can see the router has an interface called **Fa0/0** with IP 192.168.1.1, on our local network, and another interface
+**Fa0/1** with IP 67.210.97.1, sitting on the public internet!
+
+<hr />
+
+**1. When 192.168.1.2 wants to send a packet to 192.168.1.3,
+what happens? Is NAT involved?**
+
+**Solution:** The packet from 192.168.1.2 goes to the switch (it isn't pictured here but it would be between the router and the machines),
+which goes to the router. The router sees that the packet is on the
+current network, and sends it back to the switch, which sends it to 192.168.1.3, _NO NAT REQUIRED_
+
+<hr />
+
+**2. When 192.168.1.2 wants to visit google.com (pretend the server is at 34.218.35.79), what happens?
+Is NAT involved?**
+
+**Solution:** _Yes, NAT is involved because the packet is going out of the local LAN._
+The packet travels to the router, and the router realises its going to the internet. The router changes the source IP address
+to its own IP, and sends that packet to the ISPs router where it then gets sent to google's servers.
+
+Packet looks like this when it hits the router (note how the source IP is the IP of the computer)
+
+<div className="ci">
+  <img src="https://i.imgur.com/GaNOfd9.jpg" />
+</div>
+
+And then after NAT (source IP is now router's IP)
+
+<div className="ci">
+  <img src="https://i.imgur.com/NSuanvd.jpg" />
+</div>
+
+<hr />
+
+Great! Now for a tricky question that an astute reader would've thought of:
+
+**3. When Google's servers (34.218.35.79) want to send a packet back to us, how does the router know which machine requested
+the information if the source IP on the packet has been overwritten by the router's IP?**
+
+Answer: The NAT table!
+
+Think about this one closely: Our packet originally looked something like this:
+
+<div className="ci">
+  <img src="https://i.imgur.com/GaNOfd9.jpg" />
+</div>
+
+And the router changed it to this because of NAT (router overwrote the source IP (which was a private IP) with its own IP)
+
+<div className="ci">
+  <img src="https://i.imgur.com/NSuanvd.jpg" />
+</div>
+
+So when the server wants to send a response, <span className="lrr">it will flip the source + destinations around</span>
+(Think about this: when you email, the sender + receiver always switches when a reply is sent).
+
+So now the packet looks like this when being sent back to our network- note that the destination IP is the routers IP, not the
+computers!
+
+<div className="ci">
+  <img src="https://i.imgur.com/tuMKgmT.jpg" />
+</div>
+
+Now when this hits our router- what will the router make of it? The IP address is not indicative of who originally sent
+the message (192.168.1.2) since its just the router's IP! Well, our router looks at its NAT table. The NAT table would've looked something like this (since we record
+source IP/port and destination IP/port for all outbound packets to the internet):
+
+<div className="ci">
+  <img src="https://i.imgur.com/0vW47Je.jpg" />
+</div>
+
+So now, the router knows the packet should go to the machine 192.168.1.2, since the NAT table says that the computer 192.168.1.2
+made a request to google, and now there's a packet coming in from google, so this packet is meant to 192.168.1.2.
+So the final step is simple: <span className="lg">it replaces the destination with 192.168.1.2:</span>
+
+<div className="ci">
+  <img src="https://i.imgur.com/HFKbpep.jpg" />
+</div>
+
+And finally this packet gets sent to the right destination. Everyone is happy! 192.168.1.2 has successfuly talked with google (34.218.35.79).
+And its all thanks to NAT, <span className="lg">that we can conserve our precious IPv4 Addresses.</span>
+
+Often times, these NAT tables <span className="lrr">will have many entries</span>, for each active connection that every machine on your network is currently in.
+So that's where the port numbers come in: if two machines are using google, well we still have the ports to discern the two streams of
+traffic apart.
+
+<hr />
+
+Note a few more interesting things: First, the source PORT is 50021, but really this can be any _ephemeral port number_, which is
+essentially a port that <span className="lp">isn't reserved by the operating system for important purposes</span> (1-1024). The port chosen
+can differ depending on the Operating System, but
+most usually pick a large number near the end of the port range (1-65535) since those ports are rarely used.
+
+Also, the destination port is 80, which is the port for all HTTP traffic! This is what I mean by a _common port_.
+
+FInally, let's see a real life NAT table! This is the one my LAN has currently:
+
+<div className="ci">
+  <img src="https://i.imgur.com/yjwP83L.jpg" />
+</div>
+
+Of course, it will update in real time. But the general idea is still there. Using this, I can sniff what sites people on
+my local area network are on! For instance, looking up the **fourth entry** (first three are in the local area network since they
+only use 192.168 addresses), the IP _34.216.40.134_ belongs to amazon... maybe someone is a twitch stream perhaps? Could be lots of
+things obviously, aws is so common these days... But that's still cool, we can see exactly which IP the packets are going to from
+this specific person on my network (192.168.10.121)
+
+<div className="ci">
+  <img src="https://i.imgur.com/kTrN24a.jpg" />
+</div>
+
+# DHCP
+
+<div className="ci">
+  <iframe
+    width="560"
+    height="315"
+    src="https://www.youtube.com/embed/KnVu-qNEcrg"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+  ></iframe>
+</div>
+
+Okay that's it, my hands cannot type anymore 😰 Next time!
 
 # Wifi Hacking 🙈
 
@@ -532,19 +773,37 @@ that it can see _ALL the wifi packets in the vicinity_, even ones that aren't de
 
 This as you can imagine, can lead to some nefarious activities.
 
-I made a <a href="https://youtu.be/DIaYQfR8Qkg">video</a> on how to setup one of these wifi cards for some basic wireshark sniffing (in Kali Linux).
+I made a video on how to setup one of these wifi cards for some basic wireshark sniffing (in Kali Linux).
 This adapter also supports **packet injection**, which is where you can create packets on the fly and send them out to nearby devices,
 for example pretending to be the wifi access point and stealing someone's password.
+
+<div className="ci">
+  <iframe
+    width="560"
+    height="315"
+    src="https://www.youtube.com/embed/DIaYQfR8Qkg"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+  ></iframe>
+</div>
 
 It's quite technical but I'm glad I made it since
 I figured I might be able to help some people with it. Give it a view if you are at all interested!
 
 <div className="question">
   Sidenote, making youtube videos with good audio and visuals is really hard 😢
-  I'm working on it but the mic quality is kinda bad at times 😅
+  I'm working on it but the mic quality is kinda bad at times 😅 It's actually
+  so cringe how bad my audio is lol
 </div>
 
 # Outro
+
+Hopefully you learned something new. IF these concepts are at all confusing, just read more about them! _It'll click eventually_.
+Believe it or not, **Wikipedia** is a great resource, pretty much includes all the important stuff you would need to know. But I will
+try to write up more of these guides and even maybe make a video on them, because I've realized that <span className="lp">networking is super awesome</span> and
+more people should learn about it!
 
 As always, thanks for reading/watching!
 

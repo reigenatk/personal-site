@@ -38,14 +38,17 @@
     "gitalk": "^1.7.2",
     "node-sass": "^6.0.1",
     "normalize.css": "^8.0.1",
+    "postcss": "^8.4.12",
     "prism-react-renderer": "^1.2.1",
     "prismjs": "^1.25.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
     "react-icons": "^4.3.1",
+    "react-tsparticles": "^2.0.6",
     "slugify": "^1.6.1",
-    "style-components": "^0.1.0"
+    "style-components": "^0.1.0",
+    "tsparticles": "^2.0.6"
   },
   "devDependencies": {
     "prettier": "2.4.1"

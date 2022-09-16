@@ -1,9 +1,12 @@
 .header {
-  height: 95vh; /* 95% of the viewport aka the screen height */
+  height: 95vh;
+  /* 95% of the viewport aka the screen height */
   /* gradient + bg image*/
   // background-image: url(../../../static/bilgewater.jpg);
-  background-size: cover; /* img is always fuill size of screen */
-  background-position: top; /* top of the image (the content in the image) always stays at the top while bottom might get cropped */
+  background-size: cover;
+  /* img is always fuill size of screen */
+  background-position: top;
+  /* top of the image (the content in the image) always stays at the top while bottom might get cropped */
 
   /* polygon design! Use percentages for widths and its very intuitive*/
   /* clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); */
@@ -18,18 +21,44 @@
   }
 
   &__text-box {
-    position: absolute; /* relative to the header */
+    position: absolute;
+    /* relative to the header */
     top: 50%;
     left: 50%;
     /* need to transform since otherwise top left corner is at middle */
-    transform: translate(
-      -50%,
-      -50%
-    ); /* 50% of its width left, 50% height to top. This is in relation to the elemnt itself*/
+    transform: translate(-50%,
+        -50%);
+    /* 50% of its width left, 50% height to top. This is in relation to the elemnt itself*/
     text-align: center;
   }
 
   &__logo {
     height: 3.5rem;
   }
+}
+
+.generate-merged-header .site-header {
+  z-index: 1;
+}
+
+.particles-container {
+  width: 10%;
+  height: 10%;
+}
+
+#tsparticles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.hobby-header {
+  text-align: center;
+}
+
+.page-header-content {
+  position: relative;
 }

@@ -2,11 +2,36 @@ import React, { useState } from "react"
 import { Link } from "gatsby"
 import { FiAlignJustify } from "react-icons/fi"
 // import logo from "../assets/images/logo.svg"
+import Particles from "react-tsparticles"
+import { loadFull } from "tsparticles"
+import particlesConfig from "../components/particle-config"
 
 const Navbar = () => {
   const [show, setShow] = useState(false)
+  const particlesInit = async main => {
+    console.log(main)
+
+    // you can initialize the tsParticles instance (main) here, adding custom shapes or presets
+    // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
+    // starting from v2 you can add only the features you need reducing the bundle size
+    await loadFull(main)
+  }
+
+  const particlesLoaded = container => {
+    console.log(container)
+  }
+
   return (
     <nav className="navbar">
+      {/* <div className="particles-container">
+        <Particles
+          id="tsparticles"
+          init={particlesInit}
+          loaded={particlesLoaded}
+          options={particlesConfig}
+        />
+      </div> */}
+
       <div className="nav-center">
         <div className="nav-header">
           <Link to="/" className="my-name">
@@ -34,14 +59,14 @@ const Navbar = () => {
             <p>Home</p>
           </Link>
           <Link
-            to="/hobbies"
+            to="/about"
             className="nav-link"
             activeClassName="active-link"
             onClick={() => {
               setShow(false)
             }}
           >
-            <p>Hobbies</p>
+            <p>About</p>
           </Link>
           <Link
             to="/projects"

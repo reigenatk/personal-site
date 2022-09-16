@@ -57,6 +57,13 @@ const Projects = () => {
             A non-exhaustive list of the projects I have completed (and will
             complete in the future). You can filter for certain languages below
             using the tags.
+            <br />
+            <br/>
+            <span className="lg">(Update, I kinda got lazy and stopped adding to this.
+            Just checkout my <a href="https://github.com/reigenatk">Github</a> instead for latest projects)             
+            <br></br>
+            If you're curious, it's because Contentful decided to close my "free account"... these freakin tech companies man, don't you already have enough money?</span>
+
           </h4>
         </div>
         <AllProjects projects={projectdata}></AllProjects>

@@ -3,6 +3,7 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 2rem;
+  width: 70%;
 
   & p {
 
@@ -25,6 +26,28 @@
 .hobby-img {
   border-radius: 100px;
   width: 100%;
+  transition: all 0.2s ease-in;
+
+  &:hover {
+    border-radius: 15px;
+    transform: scale(1.02)
+  }
+}
+
+.hobby-descriptions-2 {
+  background: #222222;
+  margin-bottom: 3rem;
+
+  & p {
+    color: white;
+    margin-bottom: 2rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
+    margin-top: 2rem;
+    font-size: 1.3rem;
+    letter-spacing: 0.005rem;
+  }
+
   transition: all 0.2s ease-in;
 
   &:hover {
@@ -91,14 +114,74 @@
   padding: 0.5rem 4rem;
   width: 100%;
   text-align: center;
-  
+
   &:hover {
     color: white;
     background: #003366;
   }
 }
 
+
+.favorite-page {
+
+}
+
+.favorite-category {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 2rem;
+
+  &:last-child {
+    margin-bottom: 4rem;
+  }
+}
+
+.favorite-description {
+  background-color: #053192;
+  padding: 0.5rem;
+  border-radius: 10px;
+  color: 	#FFFAFA;
+  font-size: 1.25rem;
+  letter-spacing: 0.02rem;
+  font-family: 'Updock';
+  text-align: center;
+  & a {
+    color: #08e800;
+    text-decoration: none;
+  }
+}
+
+.favorite-header {
+  margin-bottom: 0.1rem;
+  font-family: 'Fira sans';
+  color: #08e800;
+}
+
+.favorite-item {
+  & p {
+    text-align: center;
+    color: #f7eb00;
+  }
+
+  & img {
+    width: 10rem;
+    cursor: pointer;
+  }
+  &:hover {
+    padding: 1rem;
+    background-color: #21a59e;
+    border-radius: 2rem;
+  }
+  transition: 0.5s ease-in;
+
+  margin: 0.1rem 0.1rem;
+}
+
 @media screen and (max-width: 479px) {
+
   /* start of phone styles */
   .hobby-descriptions {
     & p {

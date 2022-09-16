@@ -1,11 +1,50 @@
-import React from "react"
+import React, {useState, useEffect } from "react"
 import Layout from "../components/Layout"
-import { Helmet } from "react-helmet"
+// import { Helmet } from "react-helmet"
 import { StaticImage } from "gatsby-plugin-image"
-import { Link } from "gatsby"
+// import { Link } from "gatsby"
 import SEO from "../components/SEO"
 
+let getLastModifiedDate = () => {
+  var xhttp = new XMLHttpRequest();
+  let days_ago, years_ago, months_ago, hours_ago;
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      let repos = JSON.parse(this.responseText);
+      repos.forEach((repo) => {
+        if (repo.name == "personal-site") {
+          let lastModifiedDate = new Date(repo.updated_at);
+          let today = new Date();
+          let diff = today - lastModifiedDate;
+          console.log(diff);
+          // https://www.unixtimestamp.com/
+          years_ago = Math.floor(diff / 31556926)
+          diff -= years_ago * 31556926
+          months_ago = Math.floor(diff / 2629743)
+          diff -= months_ago * 2629743
+          days_ago = Math.floor(diff / 86400);
+          diff -= days_ago * 86400
+          hours_ago = Math.floor(diff / 3600);
+          lastModifiedDate = "Site last deployed: " + years_ago + " years, " + months_ago + " months, " +
+            days_ago + " days, " + hours_ago + " hours ago";
+          console.log(lastModifiedDate)
+          return lastModifiedDate;
+        }
+      });
+    }
+  };
+
+  // third param = false for synchronous call
+  xhttp.open("GET", "https://api.github.com/users/reigenatk/repos", false);
+  xhttp.send();
+}
+
 export default function Home() {
+
+  const [lastUpdated, setlastUpdated] = useState(0);
+  useEffect(() => {
+    setlastUpdated(getLastModifiedDate());
+  });
   return (
     <Layout>
       <SEO title="Home Page" />
@@ -32,17 +71,17 @@ export default function Home() {
           </article>
           <article>
             <StaticImage
-              src="../assets/img/meee.jpg"
+              src="../assets/img/me2.jpg"
               alt="a person"
               className="home-img about-img" // applied this class to wrapper
               placeholder="dominantColor"
             ></StaticImage>
             <p className="better-pictures">
-              I need better pictures of myself &#128566;
+              
             </p>
             <div class="extra-links">
               <div class="resume extra-links-item btn-text">
-                <a class="u-remove-underline" href="https://docdro.id/7OxWgWg">
+                <a class="u-remove-underline" href="https://docdro.id/YS8DPkL">
                   <div className="resume-div">
                     {/* <img id="resume_pic" src="resume-image.jpg" /> */}
                     <h5 class="resume-text">Resume</h5>
@@ -81,7 +120,32 @@ export default function Home() {
                   <i class="fa fa-linkedin-square" aria-hidden="true"></i>
                 </a>
               </div>
+              <div class="extra-links-item btn-text">
+                <a
+                  class="u-remove-underline quick-links"
+                  href="https://www.youtube.com/channel/UCgp2ZsLgfX0RGvJfMoNrFEw"
+                >
+                  <i class="fa fa-youtube" aria-hidden="true"></i>
+                </a>
+              </div>
+              <div class="extra-links-item btn-text">
+                <a
+                  class="u-remove-underline quick-links"
+                  href="https://steamcommunity.com/profiles/76561198967382598/"
+                >
+                  <i class="fa fa-steam" aria-hidden="true"></i>
+                </a>
+              </div>
+              <div class="extra-links-item btn-text">
+                <a
+                  class="u-remove-underline quick-links"
+                  href="https://reigenatk.itch.io/"
+                >
+                  <img class="quick-links-pic" src="itch.png" />
+                </a>
+              </div>
             </div>
+            <p className="last-modified">{lastUpdated}</p>
           </article>
         </section>
       </main>

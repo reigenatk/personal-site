@@ -13,21 +13,26 @@ const Experience = () => {
     <Layout>
       <SEO title="Experience" />
       <header className="hero">
-          <StaticImage
-            src="../assets/img/office.jpg"
-            alt="office"
-            className="hero-img"
-            placeholder="tracedSVG"
-            layout="fullWidth"
-          ></StaticImage>
-          <div className="hero-container">
-            <div className="hero-text">
-              <h1>Work Experience</h1>
-              <h4></h4>
-            </div>
+        <StaticImage
+          src="../assets/img/office.jpg"
+          alt="office"
+          className="hero-img"
+          placeholder="tracedSVG"
+          layout="fullWidth"
+        ></StaticImage>
+        <div className="hero-container">
+          <div className="hero-text">
+            <h1>Work Experience</h1>
+            <h4></h4>
           </div>
-        </header>
+        </div>
+      </header>
       <main className="page">
+      <div className="project-description">
+          <h4>
+           Checkout my Linkedin/resume for more details, I also got too lazy to update this page lol
+          </h4>
+        </div>
         <div className="jobs-center">
           {/* btn container */}
           <div className="btn-container">
@@ -76,10 +81,10 @@ const Experience = () => {
 
         <div className="courses">
           <div className="course">
-            <h3>CS 374: Algorithms (Taking)</h3>
+            <h3>CS 374: Algorithms</h3>
           </div>
           <div className="course">
-            <h3>ECE 408: Applied Parellel Programming (Taking)</h3>
+            <h3>ECE 408: Applied Parellel Programming</h3>
           </div>
           <div className="course">
             <h3>CS 225: Data Structures (A-)</h3>
@@ -89,6 +94,9 @@ const Experience = () => {
           </div>
           <div className="course">
             <h3>STAT 400 (A-)</h3>
+          </div>
+          <div className="course">
+            <h3>ECE 391: Operating Systems</h3>
           </div>
         </div>
       </main>
