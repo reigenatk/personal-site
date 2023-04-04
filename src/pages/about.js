@@ -41,7 +41,7 @@ const About = () => {
                   I do (poorly) maintain a few hobbies
                 </span>{" "}
                 which you can read about using the buttons below. Oh, I also made a list of 
-                some of my <span className="lr">favorite stuff.</span>
+                some of my <a href="/favorite"><span className="lr">favorite stuff.</span></a>
                 <br />
                 <br />I will now proceed to put <span className="g"> an image of a cat</span> on the right,
                 so this page doesn't look so barren. Cats are pretty cool. It's not my cat

@@ -136,7 +136,36 @@ const Favorite = () => {
                   <img onClick={() => toggleModal(9)} src="https://m.media-amazon.com/images/M/MV5BMjExMTg5OTU0NF5BMl5BanBnXkFtZTcwMjMxMzMzMw@@._V1_.jpg" />
                 </div>
               </ul>
-              
+              <ul>
+                <div className="favorite-item">
+                  <p>Taxi Driver</p>
+                  <img onClick={() => toggleModal(49)} src="https://m.media-amazon.com/images/M/MV5BM2M1MmVhNDgtNmI0YS00ZDNmLTkyNjctNTJiYTQ2N2NmYzc2XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg" />
+                </div>
+              </ul>
+              <ul>
+                <div className="favorite-item">
+                  <p>Napoleon Dynamite</p>
+                  <img onClick={() => toggleModal(50)} src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/81j+ZPIsihL._AC_UF894,1000_QL80_.jpg" />
+                </div>
+              </ul>
+              <ul>
+                <div className="favorite-item">
+                  <p>It's Such a Beautiful Day</p>
+                  <img onClick={() => toggleModal(51)} src="https://static.metacritic.com/images/products/movies/0/a984a97e54432c489cc9a3d0bb964b33.jpg" />
+                </div>
+              </ul>
+              <ul>
+                <div className="favorite-item">
+                  <p>Ratatouille</p>
+                  <img onClick={() => toggleModal(52)} src="https://lumiere-a.akamaihd.net/v1/images/p_ratatouille_19736_0814231f.jpeg" />
+                </div>
+              </ul>
+              <ul>
+                <div className="favorite-item">
+                  <p>Office Space</p>
+                  <img onClick={() => toggleModal(53)} src="https://m.media-amazon.com/images/M/MV5BOTA5MzQ3MzI1NV5BMl5BanBnXkFtZTgwNTcxNTYxMTE@._V1_.jpg" />
+                </div>
+              </ul>
             </div>
             <h1 className="favorite-header">TV Shows</h1>
             <p className="favorite-description">
@@ -277,6 +306,24 @@ const Favorite = () => {
                   <img onClick={() => toggleModal(42)} src="https://upload.wikimedia.org/wikipedia/en/d/da/Katana_Zero_cover.png" />
                 </div>
               </ul>
+              <ul>
+                <div className="favorite-item">
+                  <p>Portal 2</p>
+                  <img onClick={() => toggleModal(44)} src="https://upload.wikimedia.org/wikipedia/en/f/f9/Portal2cover.jpg" />
+                </div>
+              </ul>
+              <ul>
+                <div className="favorite-item">
+                  <p>Yume Nikki</p>
+                  <img onClick={() => toggleModal(54)} src="https://upload.wikimedia.org/wikipedia/en/thumb/e/ee/Yume_Nikki_header_image_on_Steam.jpg/220px-Yume_Nikki_header_image_on_Steam.jpg" />
+                </div>
+              </ul>
+              <ul>
+                <div className="favorite-item">
+                  <p>Tiny Bunny</p>
+                  <img onClick={() => toggleModal(55)} src="https://static-cdn.jtvnw.net/ttv-boxart/516801_IGDB-272x380.jpg" />
+                </div>
+              </ul>
             </div>
 
             <h1 className="favorite-header">Musicians</h1>
@@ -352,7 +399,7 @@ const Favorite = () => {
               <ul>
                 <div className="favorite-item">
                   <p>Sewerslvt</p>
-                  <img onClick={() => toggleModal(33)} src="https://yt3.ggpht.com/QprPeK62mqF8JF3SesJ7cBq40UuI5L6bEbkIQwcZwrm2kg_QA_6ifiSInuykgmkCDplz8AZE43w=s900-c-k-c0x00ffffff-no-rj" />
+                  <img onClick={() => toggleModal(33)} src="https://i.scdn.co/image/ab6761610000e5eb8a1271f7f32e5202924ebff2" />
                 </div>
               </ul>
               <ul>
@@ -367,16 +414,22 @@ const Favorite = () => {
                   <img onClick={() => toggleModal(39)} src="https://yt3.ggpht.com/ytc/AMLnZu__kdIlUiRhRh0KNORosLMpQnQhKOx7XvUDPhrnfQ=s900-c-k-c0x00ffffff-no-rj" />
                 </div>
               </ul>
+              <ul>
+                <div className="favorite-item">
+                  <p>METAROOM</p>
+                  <img onClick={() => toggleModal(43)} src="https://yt3.googleusercontent.com/Nuvc46YZyYZhI-L0y_8qvsr6UwxuTZLPmVKmaNbU4Tc_XFHQ69Xv_OA5PV3zA03NX1jh7QCnAA=s900-c-k-c0x00ffffff-no-rj" />
+                </div>
+              </ul>
             </div>
             
             <h1 className="favorite-header">Books</h1>
             <p className="favorite-description">
-              Books? 🤨... OK hear me out, I don't really read often, but when I do I make 
-              sure its a book I'm 90% likely to enjoy. I have this bad habit, where I'll browse rating
-              lists and rankings, making sure it's the absolute perfect book, instead of just reading the damn thing.
-
-              Although most of the time I just read books 
-              to act smart and to not be out of the loop. Honestly IDK why I put this here lol
+              Reading is a hobby that I've picked up over the last year. I mostly read 
+              classic novels for fun, and sometimes a nonfiction book that's relevant to the work I do.
+              But I won't include nonfiction books here since that's boring :P
+              <br></br>
+              <br></br>
+              If you're interested, I have a <a href="https://www.goodreads.com/user/show/143883745-sntri">goodreads page</a> where I track my reading.
             </p>
             <div className="favorite-category">
 
@@ -408,6 +461,36 @@ const Favorite = () => {
                 <div className="favorite-item">
                   <p>Holes</p>
                   <img onClick={() => toggleModal(41)} src="https://upload.wikimedia.org/wikipedia/en/c/c3/Sachar_-_Holes_Coverart.png" />
+                </div>
+              </ul>
+              <ul>
+                <div className="favorite-item">
+                  <p>Three Body Problem</p>
+                  <img onClick={() => toggleModal(45)} src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1415428227i/20518872.jpg" />
+                </div>
+              </ul>
+              <ul>
+                <div className="favorite-item">
+                  <p>Flowers for Algernon</p>
+                  <img onClick={() => toggleModal(46)} src="https://covers.openlibrary.org/b/id/10331950-L.jpg" />
+                </div>
+              </ul>
+              <ul>
+                <div className="favorite-item">
+                  <p>The Metamorphosis</p>
+                  <img onClick={() => toggleModal(47)} src="https://m.media-amazon.com/images/I/51Lgzw5BD8L.jpg" />
+                </div>
+              </ul>
+              <ul>
+                <div className="favorite-item">
+                  <p>No Longer Human</p>
+                  <img onClick={() => toggleModal(48)} src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/71HcMuc5u2L._AC_UF1000,1000_QL80_.jpg" />
+                </div>
+              </ul>
+              <ul>
+                <div className="favorite-item">
+                  <p>A Clockwork Orange</p>
+                  <img onClick={() => toggleModal(56)} src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/51FTcHNhQqL._AC_UF1000,1000_QL80_.jpg" />
                 </div>
               </ul>
             </div>

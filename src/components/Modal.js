@@ -19,7 +19,7 @@ const Modal = ({ show, exitModal, desc_id }) => {
       and really thought it was something afterwards"
     }
     if (id == 3) {
-      return "I use this movie to learn investing"
+      return "$GME to the moon"
     }
     if (id == 4) {
       return "I'm convinced this movie is the \
@@ -125,10 +125,10 @@ const Modal = ({ show, exitModal, desc_id }) => {
       lots of his songs sound similar lol"
     }
     if (id == 25) {
-      return "Breakcore god"
+      return "Breakcore god. Probably one of my favorite artists period, some of my favorite songs ever are his songs"
     }
     if (id == 26) {
-      return "IDM god"
+      return "everyone likes him so i just put him here to seem sophisticated.... Ok jokes aside he's a very unique producer and makes some crazy ass tracks"
     }
     if (id == 27) {
       return "PSYQUI's songs are so well mixed"
@@ -144,7 +144,8 @@ const Modal = ({ show, exitModal, desc_id }) => {
     if (id == 30) {
       return "Dune is probably my favorite book. Who doesn't love big sandworms? \
       The new movie is also really good, but IMO can't do the book justice. It's\
-      probably my favorite book ever, the more I think about it. Something about\
+      probably one of the only books that I couldn't put down, literally. And I normally hate reading.\
+       Something about\
        the worldbuilding in this book is just so insane."
     }
     if (id == 31) {
@@ -206,6 +207,48 @@ const Modal = ({ show, exitModal, desc_id }) => {
       a game with one of the cleanest, prettiest graphics and smoothest gameplay experiences I've ever had \
       Like, I went into this game thinking I would just play a bit, and I wanted to hate it \
       because I'm not really into beatem/shootemup stuff, but gawd dam this game is well made";
+    }
+    if (id == 43) {
+      return "Hyperpop psycho... his songs are so trippy yet melodic. If I would say a producer is closest to the style I eventually wanna be like, I'd say METAROOM."
+    }
+    if (id == 44) {
+      return "Portal 2 is one of the best puzzle games ever. I know there are puzzle game elitists that would disagree but for how simple it is, and the amount of fun it is, there's nothing that can top this game imo"
+    }
+    if (id == 45) {
+      return "An insanely good Chinese science fiction series (translated to English). After reading this, you will NOT want extraterrestrial contact to occur during our lifetimes. Highly recommend!"
+    }
+    if (id == 46) {
+      return "This book is just a very imaginative depiction of the highest high to the lowest low. A ride I found very exhilerating yet also very sad."
+    }
+    if (id == 47) {
+      return "The Metamorphosis made me question human value and what I'm worth as a person. And I concluded that there's not a lot between me and the cockroach on the floor. That's why I love this book."
+    }
+    if (id == 48) {
+      return "This book is close to me because I relate with it so heavily. And yet it takes place 100 years ago."
+    }
+    if (id == 49) {
+      return "Do yourself a favor and watch this film if you haven't already. It's one of my favorite films of all time."
+    }
+    if (id == 50) {
+      return "It's just so funny idk I had to add it here"
+    }
+    if (id == 51) {
+      return "Again, do yourself a favor and watch this film. It's the thing that made me come closest to crying. I still didn't cry tho. It was close."
+    }
+    if (id == 52) {
+      return "I feel like I have to add this. It's just such a great film from bottom to top."
+    }
+    if (id == 53) {
+      return "One of the funniest movies I've ever seen"
+    }
+    if (id == 54) {
+      return "The father of all indie RPGs"
+    }
+    if (id == 55) {
+      return "One of the most insane VNs I've ever played. The art and sound is insane"
+    }
+    if (id == 56) {
+      return "To be honest, I didn't like this book at first. But it grew on me. It's a great coming of age tale and reads very smoothly"
     }
   }
   return (

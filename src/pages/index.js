@@ -54,9 +54,9 @@ export default function Home() {
             <h2>Hi! I'm Richard.</h2>
             <p>
               And this is my personal site! I've always wanted to have a place
-              where I can jot down everything about myself, not just for
-              employers and friends, but also for myself. So I'm excited to have
-              made this!
+              where I can jot down everything about myself, mainly for my own sake.
+              It's a bit like keeping a diary of who I am, I suppose. Anyways, feel free
+              to click around and learn more about me.
             </p>
             <p>
               I am studying computer science at the{" "}
@@ -70,8 +70,15 @@ export default function Home() {
             </p>
           </article>
           <article>
-            <StaticImage
+            {/* <StaticImage
               src="../assets/img/me2.jpg"
+              alt="a person"
+              className="home-img about-img" // applied this class to wrapper
+              placeholder="dominantColor"
+            ></StaticImage> */}
+
+            <StaticImage
+              src="https://images.unsplash.com/photo-1564801720666-83b2d7a3de73?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8c3RhcnJ5JTIwc2t5fGVufDB8fDB8fA%3D%3D&w=1000&q=80"
               alt="a person"
               className="home-img about-img" // applied this class to wrapper
               placeholder="dominantColor"
